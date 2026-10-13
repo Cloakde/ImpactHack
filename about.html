@@ -1,221 +1,148 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — Refactor the World</title>
-  <meta name="description" content="Refactor the World is a nonprofit running free, monthly hackathons where students build technology that solves real problems.">
-  <meta property="og:title" content="About — Refactor the World">
-  <meta property="og:description" content="Refactor the World is a nonprofit running free, monthly hackathons where students build technology that solves real problems.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About · Refactor the World</title>
+  <meta name="description" content="Refactor the World is a nonprofit running a free, online hackathon every month where students build fixes for real problems.">
+  <meta property="og:title" content="About · Refactor the World">
+  <meta property="og:description" content="Refactor the World is a nonprofit running a free, online hackathon every month where students build fixes for real problems.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#07090d">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("rtw-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="container nav" aria-label="Main">
-      <a class="logo" href="index.html" aria-label="Refactor the World home">
-        <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-        <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-      </a>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="hackathons.html">hackathons</a></li>
-        <li><a href="sponsor.html">sponsor</a></li>
-        <li><a href="about.html" aria-current="page">about</a></li>
-        <li><a href="index.html#faq">faq</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        </button>
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </nav>
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html">Hackathons</a>
+        <a class="hide-sm" href="sponsor.html">Sponsor</a>
+        <a class="hide-sm" href="about.html" aria-current="page">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <section class="page-head">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">~</a> / about</div>
-        <h1>About us</h1>
-        <p class="lede">Refactor the World is a nonprofit that runs free, monthly hackathons where students use technology to solve real problems.</p>
+      <div class="wrap">
+        <p class="label">About</p>
+        <h1 class="title">Why refactor<br>the world?</h1>
+        <p class="lede">Refactor the World is a nonprofit that runs a free, online hackathon every month. Students build working fixes for real problems, and we give them the deadline, the judges and the community to do it.</p>
       </div>
     </section>
 
-    <!-- Mission -->
     <section class="section">
-      <div class="container split">
+      <div class="wrap name-grid">
         <div>
-          <div class="file-tab">mission.md</div>
-          <h2>Our mission</h2>
-          <p>We believe students don't have to wait until graduation to make a difference. With modern tools and AI, a motivated student can build something genuinely useful in a matter of days.</p>
-          <p>Our job is to give them the reason, the structure, and the community to do it, every single month, at no cost.</p>
+          <p class="label">The name</p>
+          <h2 class="h2 h2--sm">Refactor (verb): restructure something until it works better.</h2>
+          <p class="body-copy">Programmers refactor code that works badly. Plenty of the world's systems could use the same treatment, and students with modern tools and AI can build real fixes in weeks. <strong>We think they shouldn't have to wait until graduation to start.</strong></p>
         </div>
-        <div>
-          <div class="file-tab">why_the_name.md</div>
-          <h2>Why "refactor"?</h2>
-          <p>In programming, <em>refactoring</em> means taking something that works badly and restructuring it until it works well. A lot of the world's systems could use the same treatment.</p>
-          <div class="diff" aria-label="A code diff illustrating our approach">
-            <div class="diff__head">world.diff</div>
-            <div class="diff__line diff__line--del">- wait for someone else to fix it</div>
-            <div class="diff__line diff__line--add">+ build the fix yourself, this month</div>
-          </div>
+        <div class="code diff" role="group" aria-label="world.diff">
+          <div class="code__bar">world.diff</div>
+<pre><code><span class="c">@@ how problems get fixed @@</span>
+<span class="del">- wait for someone else to fix it</span>
+<span class="del">- learn now, build later</span>
+<span class="del">- only if you can afford the entry fee</span>
+<span class="add">+ build the fix yourself, this month</span>
+<span class="add">+ learn by shipping</span>
+<span class="add">+ free, online, open to anyone</span></code></pre>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">values.json</div>
-          <h2>What we believe</h2>
-        </div>
-        <div class="grid grid--4">
-          <div class="card">
-            <div class="card__step">01</div>
-            <h3>Access for everyone</h3>
-            <p>Free and online, so cost and location never decide who gets to build.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">02</div>
-            <h3>Real problems first</h3>
-            <p>The best projects start with a real need, not a buzzword.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">03</div>
-            <h3>Ship, then improve</h3>
-            <p>A working prototype beats a perfect plan. Build it, demo it, iterate.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">04</div>
-            <h3>Embrace new tools</h3>
-            <p>AI and modern tools let students build more. We teach and encourage their use.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Story -->
     <section class="section">
-      <div class="container split">
-        <div>
-          <div class="file-tab">CHANGELOG.md</div>
-          <h2>Our story so far</h2>
-          <p>Our first hackathon, ImpactHack 2026, challenged students to build technology that creates meaningful impact in their schools, communities, or the world. More than 450 students signed up.</p>
-          <p>That response made one thing clear: once wasn't enough. So we're making it a monthly habit, under a new name with a bigger goal.</p>
-        </div>
-        <ol class="timeline">
+      <div class="wrap">
+        <p class="label">What we believe</p>
+        <ul class="rows rows--values">
           <li>
-            <h3>v0.1 · ImpactHack 2026</h3>
-            <p>Our first online hackathon. 450+ participants, 23 prizes.</p>
+            <h3>Cost and location shouldn't decide who gets to build.</h3>
+            <p>Every hackathon is free and online.</p>
           </li>
           <li>
-            <h3>v1.0 · Refactor the World</h3>
-            <p>We launch as a nonprofit with a new hackathon every month.</p>
+            <h3>Start with a real problem.</h3>
+            <p>The best projects begin with a need someone actually has.</p>
           </li>
           <li>
-            <h3>next · You</h3>
-            <p>Join a hackathon, sponsor one, or help us grow.</p>
+            <h3>A working prototype beats a perfect plan.</h3>
+            <p>Build it, demo it, then make it better.</p>
+          </li>
+          <li>
+            <h3>Use every tool available.</h3>
+            <p>AI lets students build more than ever. We encourage it at every step.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap changelog-grid">
+        <div>
+          <p class="label">Changelog</p>
+          <h2 class="h2">How we got here.</h2>
+        </div>
+        <ol class="changelog">
+          <li>
+            <p class="changelog__ver">v0.1 <span>ImpactHack 2026</span></p>
+            <p>Our first online hackathon asked students to build technology that makes a difference in their school, their community or the world. More than 450 signed up and competed for 23 prizes.</p>
+          </li>
+          <li>
+            <p class="changelog__ver">v1.0 <span>Refactor the World</span></p>
+            <p>One wasn't enough. We became a nonprofit with a new name and a new hackathon every month.</p>
+          </li>
+          <li class="changelog__next">
+            <p class="changelog__ver">next <span>you</span></p>
+            <p>Join a hackathon, sponsor one, or help us run them.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- Team -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">CONTRIBUTORS.md</div>
-          <h2>The team</h2>
-          <p class="lede">A small group of students and builders who keep the commits coming.</p>
-        </div>
-        <!-- TODO: replace placeholder cards with real team members.
-             Copy one .team-card block per person; put their initials in the avatar. -->
-        <div class="grid grid--3">
-          <div class="card team-card">
-            <div class="team-card__avatar">?</div>
-            <h3>Team member</h3>
-            <p class="comment">// role</p>
-            <p>Short bio coming soon.</p>
-          </div>
-          <div class="card team-card">
-            <div class="team-card__avatar">?</div>
-            <h3>Team member</h3>
-            <p class="comment">// role</p>
-            <p>Short bio coming soon.</p>
-          </div>
-          <div class="card team-card">
-            <div class="team-card__avatar">?</div>
-            <h3>Team member</h3>
-            <p class="comment">// role</p>
-            <p>Short bio coming soon.</p>
-          </div>
-        </div>
+    <!-- TODO: add the team. Suggested structure:
+    <section class="section">
+      <div class="wrap">
+        <p class="label">Team</p>
+        <ul class="rows rows--team">
+          <li><h3>Full name</h3><p>Role. One-line bio.</p></li>
+        </ul>
       </div>
     </section>
+    -->
 
-    <section class="section">
-      <div class="container">
-        <div class="cta">
-          <h2>Want to be part of the story?</h2>
-          <p class="lede">Join our next hackathon or help keep them free for everyone.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="hackathons.html">join_next_hackathon</a>
-            <a class="btn btn--ghost" href="sponsor.html">become_a_sponsor</a>
-          </div>
+    <section class="closing">
+      <div class="wrap">
+        <p class="prompt"><span class="sigil">$</span> git checkout -b <span class="nowrap">your-fix</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="actions">
+          <a class="button" href="hackathons.html">Join the next hackathon</a>
+          <a class="textlink" href="sponsor.html">Sponsor a month</a>
         </div>
       </div>
     </section>
   </main>
 
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="logo" href="index.html">
-            <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-            <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-          </a>
-          <p class="footer__tagline">A nonprofit running free, monthly hackathons where students build technology for the public good.</p>
-        </div>
-        <div>
-          <h4>// explore</h4>
-          <ul>
-            <li><a href="hackathons.html">Hackathons</a></li>
-            <li><a href="sponsor.html">Sponsor</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>// connect</h4>
-          <ul>
-            <!-- TODO: replace with the organization's contact email -->
-            <li><a href="mailto:hello@example.org">Email us</a></li>
-            <!-- TODO: add social links, e.g. <li><a href="https://discord.gg/...">Discord</a></li> -->
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>&copy; <span data-year>2026</span> Refactor the World</span>
-        <span>built by students, for the world</span>
-      </div>
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <!-- TODO: replace with the organization's contact email -->
+        <a href="mailto:hello@example.org">hello@example.org</a>
+      </nav>
     </div>
   </footer>
 
   <script src="assets/js/events.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

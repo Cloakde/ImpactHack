@@ -1,232 +1,165 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sponsor — Refactor the World</title>
-  <meta name="description" content="Sponsor Refactor the World and help keep monthly student hackathons free. Prizes, funding, tools, mentors, and more.">
-  <meta property="og:title" content="Sponsor — Refactor the World">
-  <meta property="og:description" content="Sponsor Refactor the World and help keep monthly student hackathons free. Prizes, funding, tools, mentors, and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sponsor · Refactor the World</title>
+  <meta name="description" content="Sponsor a Refactor the World hackathon. Fund prizes, donate tools and credits, or send judges and mentors, and keep it free for students.">
+  <meta property="og:title" content="Sponsor · Refactor the World">
+  <meta property="og:description" content="Sponsor a Refactor the World hackathon. Fund prizes, donate tools and credits, or send judges and mentors, and keep it free for students.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#07090d">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("rtw-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="container nav" aria-label="Main">
-      <a class="logo" href="index.html" aria-label="Refactor the World home">
-        <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-        <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-      </a>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="hackathons.html">hackathons</a></li>
-        <li><a href="sponsor.html" aria-current="page">sponsor</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="index.html#faq">faq</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        </button>
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </nav>
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html">Hackathons</a>
+        <a class="hide-sm" href="sponsor.html" aria-current="page">Sponsor</a>
+        <a class="hide-sm" href="about.html">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <section class="page-head">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">~</a> / sponsor</div>
-        <h1>Sponsor the next <span class="accent-green">refactor</span>.</h1>
-        <p class="lede">Your support keeps our hackathons free for every student, every month, and puts your name behind projects built to make a real difference.</p>
-        <div class="btn-row">
-          <!-- TODO: replace with the organization's contact email -->
-          <a class="btn btn--primary" href="mailto:hello@example.org?subject=Sponsoring%20Refactor%20the%20World">get_in_touch</a>
+      <div class="wrap">
+        <p class="label">Sponsor</p>
+        <h1 class="title">Put your name<br>on a month.</h1>
+        <p class="lede">Our hackathons are free for students because sponsors cover the prizes, the tools and the cost of running them. Here's how you can help.</p>
+        <div class="actions">
+          <a class="button" href="#contact">Get in touch</a>
+          <a class="textlink" href="#ways">See the options</a>
         </div>
       </div>
     </section>
 
-    <!-- Why sponsor -->
     <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">why_sponsor.md</div>
-          <h2>Why sponsor Refactor the World?</h2>
+      <div class="wrap figures">
+        <div>
+          <p class="figure">450</p>
+          <p>students signed up for our first hackathon, ImpactHack 2026.</p>
         </div>
-        <div class="grid grid--4">
-          <div class="card">
-            <div class="card__icon">450</div>
-            <h3>Proven reach</h3>
-            <p>Our very first hackathon brought together more than 450 student participants.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">12x</div>
-            <h3>Recurring visibility</h3>
-            <p>We run every month, so your support shows up again and again, not just once a year.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">+</div>
-            <h3>Real-world impact</h3>
-            <p>Students build for their schools and communities. Your brand stands next to work that matters.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">&gt;_</div>
-            <h3>Emerging talent</h3>
-            <p>Meet motivated, hands-on student builders who ship working projects with modern tools and AI.</p>
-          </div>
+        <div>
+          <p class="figure">12</p>
+          <p>hackathons a year, so your name shows up again and again.</p>
+        </div>
+        <div>
+          <p class="figure">0</p>
+          <p>dollars students pay to enter. You make that possible.</p>
         </div>
       </div>
     </section>
 
-    <!-- Ways to support -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">ways_to_support.ts</div>
-          <h2>Ways to support</h2>
-          <p class="lede">Every contribution helps, whether it's funding, prizes, tools, or time.</p>
-        </div>
-        <div class="grid grid--3">
-          <div class="card">
-            <div class="card__label">// prizes</div>
-            <h3>Sponsor a prize</h3>
-            <p>Back a category award like Best Social Impact or Best Use of AI, with your name on it.</p>
-          </div>
-          <div class="card">
-            <div class="card__label">// funding</div>
-            <h3>Fund an event</h3>
-            <p>Cover the costs of running a month's hackathon and become its presenting sponsor.</p>
-          </div>
-          <div class="card">
-            <div class="card__label">// tools</div>
-            <h3>Provide tools &amp; credits</h3>
-            <p>Give participants API credits, software licenses, or platform access to build with.</p>
-          </div>
-          <div class="card">
-            <div class="card__label">// people</div>
-            <h3>Lend your experts</h3>
-            <p>Your team can serve as judges, mentors, or workshop speakers for our participants.</p>
-          </div>
-          <div class="card">
-            <div class="card__label">// challenges</div>
-            <h3>Bring a real problem</h3>
-            <p>Propose a theme or challenge drawn from a real need, and see what students build for it.</p>
-          </div>
-          <div class="card">
-            <div class="card__label">// donations</div>
-            <h3>Donate</h3>
-            <p>Individual donations are coming soon. In the meantime, reach out and we'll find a way.</p>
-          </div>
-        </div>
+    <section class="section" id="ways">
+      <div class="wrap">
+        <p class="label">Ways to help</p>
+        <h2 class="h2">Pick what fits.</h2>
+        <ul class="rows">
+          <li>
+            <h3>Prizes</h3>
+            <p>Back an award such as Best Social Impact or Best Use of AI. The prize carries your name.</p>
+          </li>
+          <li>
+            <h3>A whole month</h3>
+            <p>Cover the cost of one hackathon and be its presenting sponsor.</p>
+          </li>
+          <li>
+            <h3>Tools &amp; credits</h3>
+            <p>Give participants API credits, software licenses or platform access to build with.</p>
+          </li>
+          <li>
+            <h3>Judges &amp; mentors</h3>
+            <p>Send people from your team to judge projects, mentor participants or run a workshop.</p>
+          </li>
+          <li>
+            <h3>A real problem</h3>
+            <p>Propose a theme drawn from a real need and see what students build for it.</p>
+          </li>
+          <li>
+            <h3>Donations</h3>
+            <p>Online donations are coming soon. Until then, email us and we'll sort it out.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Packages -->
     <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">packages.json</div>
-          <h2>Sponsorship packages</h2>
-          <p class="lede">Flexible options for every budget. Contact us and we'll tailor a package that fits.</p>
-        </div>
+      <div class="wrap">
+        <p class="label">Packages</p>
+        <h2 class="h2">Three ways in.</h2>
+        <p class="body-copy">Pricing depends on what you'd like to include. Email us and we'll put together a package that fits your budget.</p>
         <!-- TODO: add pricing and specific benefits once sponsorship tiers are finalized -->
-        <div class="grid grid--3">
-          <div class="card card--feature">
-            <div class="card__label">// one_event</div>
+        <div class="packages">
+          <div>
+            <p class="label">One month</p>
             <h3>Event sponsor</h3>
             <ul>
-              <li>Support a single monthly hackathon</li>
-              <li>Logo on that event's page and announcements</li>
-              <li>Named prize or challenge option</li>
+              <li>Support a single hackathon</li>
+              <li>Your logo on that event's page and announcements</li>
+              <li>Optional named prize or challenge</li>
             </ul>
-            <a class="btn btn--ghost" href="mailto:hello@example.org?subject=Event%20sponsorship">ask_about_this</a>
           </div>
-          <div class="card card--feature card--highlight">
-            <div class="card__label accent-green">// recommended</div>
+          <div class="packages__pick">
+            <p class="label">Several months</p>
             <h3>Season partner</h3>
             <ul>
-              <li>Support a series of monthly hackathons</li>
-              <li>Logo across our website and every event in the series</li>
+              <li>Support a run of monthly hackathons</li>
+              <li>Your logo on this site and every event in the run</li>
               <li>Judge and mentor seats for your team</li>
-              <li>Opportunities to present to participants</li>
+              <li>A chance to speak to participants</li>
             </ul>
-            <a class="btn btn--primary" href="mailto:hello@example.org?subject=Season%20partnership">ask_about_this</a>
           </div>
-          <div class="card card--feature">
-            <div class="card__label">// in_kind</div>
+          <div>
+            <p class="label">Tools or swag</p>
             <h3>In-kind partner</h3>
             <ul>
-              <li>Contribute tools, credits, or swag</li>
+              <li>Contribute credits, licenses or swag</li>
               <li>Recognition on event pages</li>
-              <li>A great way to get your product into builders' hands</li>
+              <li>Your product in the hands of builders</li>
             </ul>
-            <a class="btn btn--ghost" href="mailto:hello@example.org?subject=In-kind%20partnership">ask_about_this</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt">
-      <div class="container">
-        <div class="cta">
-          <h2>Let's build something together.</h2>
-          <p class="lede">Tell us what you have in mind and we'll get back to you with options.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="mailto:hello@example.org?subject=Sponsoring%20Refactor%20the%20World">email_us</a>
-            <a class="btn btn--ghost" href="hackathons.html">see_our_hackathons</a>
-          </div>
+    <section class="closing" id="contact">
+      <div class="wrap">
+        <p class="label">Contact</p>
+        <!-- TODO: replace with the organization's contact email (also in data-copy below) -->
+        <p class="prompt email"><span class="sigil">@</span> <a id="contact-email" href="mailto:hello@example.org">hello@example.org</a></p>
+        <div class="actions">
+          <button class="button button--copy" type="button" data-copy="hello@example.org" aria-controls="contact-email">Copy email</button>
+          <a class="textlink" href="hackathons.html">See the hackathons</a>
         </div>
       </div>
     </section>
   </main>
 
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="logo" href="index.html">
-            <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-            <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-          </a>
-          <p class="footer__tagline">A nonprofit running free, monthly hackathons where students build technology for the public good.</p>
-        </div>
-        <div>
-          <h4>// explore</h4>
-          <ul>
-            <li><a href="hackathons.html">Hackathons</a></li>
-            <li><a href="sponsor.html">Sponsor</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>// connect</h4>
-          <ul>
-            <!-- TODO: replace with the organization's contact email -->
-            <li><a href="mailto:hello@example.org">Email us</a></li>
-            <!-- TODO: add social links, e.g. <li><a href="https://discord.gg/...">Discord</a></li> -->
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>&copy; <span data-year>2026</span> Refactor the World</span>
-        <span>built by students, for the world</span>
-      </div>
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <!-- TODO: replace with the organization's contact email -->
+        <a href="mailto:hello@example.org">hello@example.org</a>
+      </nav>
     </div>
   </footer>
 
   <script src="assets/js/events.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

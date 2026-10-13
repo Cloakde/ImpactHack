@@ -22,7 +22,7 @@ window.RTW_EVENTS = [
     dateLabel: "Date announced soon",
     theme: "Theme to be revealed",
     description:
-      "A new problem space, a new build window, and a new chance to ship something that matters. Free, online, and open to students everywhere.",
+      "The theme, dates and prizes go up on Devpost when the hackathon is announced.",
     format: "Online",
     url: null,
     stats: null

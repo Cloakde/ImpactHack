@@ -117,9 +117,15 @@
         var idx = landIndex(lon, lat);
 
         if (idx < 0) {
-          // Ocean: a faint dot grid that still reads as a sphere
-          if ((r + c) % 2 === 0) {
-            ctx.globalAlpha = 0.22 * shade;
+          // Ocean: a faint dot field, brighter along the 30° graticule
+          var gLat = Math.abs(((lat % 30) + 30) % 30 - 15) > 13.6;
+          var gLon = Math.abs(((lon % 30) + 30) % 30 - 15) > 14.1;
+          if (gLat || gLon) {
+            ctx.globalAlpha = 0.75 * shade;
+            ctx.fillStyle = C_FAINT;
+            ctx.fillRect(sx - 1, sy - 1, 2, 2);
+          } else if ((r + c) % 2 === 0) {
+            ctx.globalAlpha = 0.3 * shade;
             ctx.fillStyle = C_FAINT;
             ctx.fillRect(sx - 0.75, sy - 0.75, 1.5, 1.5);
           }

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -59,7 +59,7 @@
       <div class="statusbar">
         <div class="wrap">
           <span class="branch">main</span>
-          <span>build #002</span>
+          <span data-next-build>build #002</span>
           <span>next: <span data-next-date>date announced soon</span></span>
           <span class="push">build #001 shipped with 450 contributors</span>
         </div>
@@ -89,6 +89,8 @@
           <p class="body-copy">A theme goes out at the start of the month. <strong>You branch off, build, and merge back with a working demo.</strong> Judges pick the winners, and the next theme drops.</p>
         </div>
 
+        <div class="gitlog-wrap" data-gitlog>
+        <div class="gitlog__progress" aria-hidden="true"></div>
         <ol class="gitlog">
           <li class="c-main">
             <div class="graph" aria-hidden="true"></div>
@@ -146,6 +148,7 @@
             </div>
           </li>
         </ol>
+        </div>
       </div>
     </section>
 
@@ -235,6 +238,6 @@
   <script src="assets/js/events.js"></script>
   <script src="assets/js/land.js"></script>
   <script src="assets/js/globe.js"></script>
-  <script src="assets/js/home.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

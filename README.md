@@ -8,10 +8,10 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 
 | File | Page |
 |---|---|
-| `index.html` | Home: code globe hero, first-event numbers, a month as a git log, award tracks, students/sponsors, FAQ |
-| `hackathons.html` | Upcoming events, what to expect, event format, judging, past events |
-| `sponsor.html` | Why sponsor, ways to support, sponsorship packages |
-| `about.html` | Mission, the name, values, story, team |
+| `index.html` | Home: code globe hero, first-event numbers, a month as a git branch, award tracks, students and sponsors, FAQ |
+| `hackathons.html` | What's next, the standing rules, judging weights, past hackathons |
+| `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
+| `about.html` | Mission, the name, values, changelog, team (hidden until filled in) |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
 ## Adding or updating a hackathon
@@ -48,12 +48,13 @@ Search the code for `TODO` to find them all.
 - **Contact email:** `hello@example.org` in the footer of every page and on `sponsor.html`.
 - **Social links:** footer of every page (Discord, Instagram, LinkedIn, ...).
 - **Next hackathon:** date, theme and Devpost link in `assets/js/events.js`.
-- **Team:** names, roles and bios on `about.html`.
+- **Team:** names, roles and bios on `about.html` (a commented-out section is ready to fill in).
 - **Sponsorship packages:** pricing and specific benefits on `sponsor.html`.
 - **Donations:** add a donation link once the nonprofit can accept them.
 
 ## Editing tips
 
-- The home page has its own stylesheet (`assets/css/home.css`) and scripts: `globe.js` draws the hero globe from the land map in `land.js`, and `home.js` runs the headline animation and fills in the next event date from `events.js`.
-- Colors and fonts are defined as variables at the top of `assets/css/style.css` (dark theme first, light theme under `[data-theme="light"]`).
+- All pages share one stylesheet, `assets/css/site.css`. The color and font tokens are at the top.
+- `assets/js/site.js` runs on every page: it fills in event details from `events.js`, plus the small animations.
+- The home page also loads `globe.js`, which draws the hero globe from the land map in `land.js` (Natural Earth data).
 - The header and footer are repeated in each page. If you change one, update it in all five HTML files.
