@@ -8,7 +8,7 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 
 | File | Page |
 |---|---|
-| `index.html` | Home: hero, stats, how it works, next hackathon, audiences, FAQ |
+| `index.html` | Home: code globe hero, first-event numbers, a month as a git log, award tracks, students/sponsors, FAQ |
 | `hackathons.html` | Upcoming events, what to expect, event format, judging, past events |
 | `sponsor.html` | Why sponsor, ways to support, sponsorship packages |
 | `about.html` | Mission, the name, values, story, team |
@@ -54,5 +54,6 @@ Search the code for `TODO` to find them all.
 
 ## Editing tips
 
+- The home page has its own stylesheet (`assets/css/home.css`) and scripts: `globe.js` draws the hero globe from the land map in `land.js`, and `home.js` runs the headline animation and fills in the next event date from `events.js`.
 - Colors and fonts are defined as variables at the top of `assets/css/style.css` (dark theme first, light theme under `[data-theme="light"]`).
 - The header and footer are repeated in each page. If you change one, update it in all five HTML files.

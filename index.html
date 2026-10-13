@@ -1,277 +1,240 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Refactor the World — Monthly hackathons for the public good</title>
-  <meta name="description" content="Refactor the World is a nonprofit running free, online, monthly hackathons where students build technology that solves real problems.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Refactor the World</title>
+  <meta name="description" content="Refactor the World is a nonprofit running a free, online hackathon every month where students build fixes for real problems.">
   <meta property="og:title" content="Refactor the World">
-  <meta property="og:description" content="Free, online, monthly hackathons where students build technology for the public good.">
+  <meta property="og:description" content="A free, online hackathon every month for students who want to fix real problems.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0d1117">
+  <meta name="theme-color" content="#07090d">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script>try{var t=localStorage.getItem("rtw-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="container nav" aria-label="Main">
-      <a class="logo" href="index.html" aria-label="Refactor the World home">
-        <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-        <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-      </a>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="hackathons.html">hackathons</a></li>
-        <li><a href="sponsor.html">sponsor</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="index.html#faq">faq</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        </button>
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </nav>
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html">Hackathons</a>
+        <a class="hide-sm" href="sponsor.html">Sponsor</a>
+        <a class="hide-sm" href="about.html">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero">
-      <div class="container hero__grid">
-        <div>
-          <p class="hero__eyebrow">// a nonprofit for student builders</p>
-          <h1>Refactor<span class="accent-purple">the World.</span></h1>
-          <p class="lede">Free, online hackathons every month where students build technology that solves real problems in their schools, communities, and beyond.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="hackathons.html">join_next_hackathon</a>
-            <a class="btn btn--ghost" href="sponsor.html">become_a_sponsor</a>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker"><span><b>&#9679;</b> Nonprofit</span><span>Free hackathons every month</span><span>Online, worldwide</span></p>
+          <h1 class="headline">
+            <span>Refactor</span>
+            <span class="struck" data-scramble>the world.</span>
+          </h1>
+          <p class="hero__lede">Every month we pick a theme, and students anywhere get a build window to make something that fixes a real problem. <em>Entry is free and AI tools are allowed.</em></p>
+          <div class="actions">
+            <a class="button" href="hackathons.html">Join the next hackathon</a>
+            <a class="textlink" href="sponsor.html">Sponsor a month</a>
           </div>
-          <ul class="tags" aria-label="Highlights">
-            <li>free</li>
-            <li>online</li>
-            <li>monthly</li>
-            <li>beginner_friendly</li>
-            <li>ai_welcome</li>
+        </div>
+
+        <div class="hero__globe">
+          <canvas id="globe" role="img" aria-label="A rotating globe drawn in code characters. A green wave sweeps around it, rewriting red noise into clean code."></canvas>
+          <div class="globe-note" aria-hidden="true">
+            <span class="k-add">just refactored</span>
+            <span class="k-clean">shipped</span>
+            <span class="k-del">still broken</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="statusbar">
+        <div class="wrap">
+          <span class="branch">main</span>
+          <span>build #002</span>
+          <span>next: <span data-next-date>date announced soon</span></span>
+          <span class="push">build #001 shipped with 450 contributors</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap proof">
+        <p class="proof__num" aria-hidden="true">450</p>
+        <div class="proof__text">
+          <p><span class="sr-only">450 </span>students signed up for our first hackathon, ImpactHack 2026. Now we run one every month.</p>
+          <ul class="facts">
+            <li>23 prizes awarded</li>
+            <li>$0 entry fee</li>
+            <li>online, worldwide</li>
+            <li>AI allowed</li>
           </ul>
         </div>
-
-        <div class="editor" aria-hidden="true">
-          <div class="editor__bar">
-            <span class="editor__dot"></span><span class="editor__dot"></span><span class="editor__dot"></span>
-            <span class="editor__file">refactor_the_world.js</span>
-          </div>
-<pre class="editor__code"><code><span class="ln"><span class="tk-com">// monthly hackathons for the public good</span></span><span class="ln"><span class="tk-kw">const</span> world = <span class="tk-kw">await</span> reality.<span class="tk-fn">load</span>();</span><span class="ln"> </span><span class="ln"><span class="tk-kw">for</span> (<span class="tk-kw">const</span> problem <span class="tk-kw">of</span> world.problems) {</span><span class="ln">  <span class="tk-fn">refactor</span>(problem, {</span><span class="ln">    <span class="tk-prop">by</span>: <span class="tk-str">"students"</span>,</span><span class="ln">    <span class="tk-prop">every</span>: <span class="tk-str">"month"</span>,</span><span class="ln">    <span class="tk-prop">cost</span>: <span class="tk-num">0</span>,</span><span class="ln">  });</span><span class="ln">}</span><span class="ln"> </span><span class="ln"><span class="tk-com">// TODO: you</span><span class="cursor"></span></span></code></pre>
-        </div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="container" aria-label="By the numbers">
-      <div class="stats">
-        <div class="stat">
-          <div class="stat__value">450+</div>
-          <div class="stat__label">students at our first hackathon</div>
-        </div>
-        <div class="stat">
-          <div class="stat__value">12</div>
-          <div class="stat__label">hackathons a year, one every month</div>
-        </div>
-        <div class="stat">
-          <div class="stat__value">$0</div>
-          <div class="stat__label">to participate, always</div>
-        </div>
-        <div class="stat">
-          <div class="stat__value">100%</div>
-          <div class="stat__label">online, open to students worldwide</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
     <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">how_it_works.md</div>
-          <h2>One month. One problem. Ship something real.</h2>
-          <p class="lede">Every hackathon follows the same simple loop, so you can jump in any month, whether it's your first project or your fiftieth.</p>
+      <div class="wrap month">
+        <div class="month__intro">
+          <p class="label">How a month works</p>
+          <h2 class="h2">Every hackathon is one branch.</h2>
+          <p class="body-copy">A theme goes out at the start of the month. <strong>You branch off, build, and merge back with a working demo.</strong> Judges pick the winners, and the next theme drops.</p>
         </div>
-        <div class="grid grid--4">
-          <div class="card">
-            <div class="card__step">01 · find</div>
-            <h3>Pick a real problem</h3>
-            <p>Something that bugs you, your school, or your community. Each event has a theme to get you started.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">02 · build</div>
-            <h3>Build with any tools</h3>
-            <p>Go solo or form a team. Websites, apps, hardware, AI tools. AI assistants are welcome at every step.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">03 · ship</div>
-            <h3>Demo what it does</h3>
-            <p>Submit a working prototype and a short demo video showing your project in action.</p>
-          </div>
-          <div class="card">
-            <div class="card__step">04 · repeat</div>
-            <h3>Win, learn, come back</h3>
-            <p>Judges pick winners across categories. Then a new theme drops next month.</p>
-          </div>
-        </div>
+
+        <ol class="gitlog">
+          <li class="c-main">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Theme drops <span class="ref ref--main">main</span></p>
+              <p class="commit__desc">The month's problem space, rules and prizes go up on Devpost.</p>
+            </div>
+          </li>
+          <li class="c-fork">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">git checkout -b your-team</p>
+              <p class="commit__desc">Register on your own or with a team.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Pick a problem</p>
+              <p class="commit__desc">Something real inside the theme: your school, your town, someone you know.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Build the fix</p>
+              <p class="commit__desc">Any language, any framework, any tools. AI is allowed from brainstorming to the final commit.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Record the demo</p>
+              <p class="commit__desc">A 2&ndash;4 minute video of the project actually working.</p>
+            </div>
+          </li>
+          <li class="c-merge">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Merge: submit</p>
+              <p class="commit__desc">Code, a short write-up, screenshots and the video.</p>
+            </div>
+          </li>
+          <li class="c-tag">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Winners announced <span class="ref">tag</span></p>
+              <p class="commit__desc">Judges score impact, technical execution, creativity, functionality, use of AI and the demo.</p>
+            </div>
+          </li>
+          <li class="c-next">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Next theme drops</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Next hackathon -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">next_hackathon.json</div>
-          <h2>Up next</h2>
-        </div>
-        <div data-events="next">
-          <p class="comment">// See the <a href="hackathons.html">hackathons page</a> for upcoming events.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Audiences -->
     <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">get_involved.ts</div>
-          <h2>Pick your role</h2>
+      <div class="wrap">
+        <p class="label">What gets built</p>
+        <ul class="tracks" data-tracks>
+          <li>Social impact</li>
+          <li>Education</li>
+          <li>Accessibility</li>
+          <li>AI that does real work</li>
+          <li>Productivity</li>
+          <li>Automation</li>
+          <li>Data &amp; analytics</li>
+          <li>Hardware &amp; IoT</li>
+          <li>Design &amp; UX</li>
+          <li>Something nobody has tried yet</li>
+        </ul>
+        <p class="body-copy tracks-note">These were award categories at ImpactHack 2026. Projects can be websites, mobile apps, AI tools, games, hardware or anything else that works.</p>
+      </div>
+    </section>
+
+    <section aria-label="Get involved">
+      <div class="wrap split">
+        <div>
+          <p class="label">Students</p>
+          <h3>Bring a problem. Leave with a project.</h3>
+          <p>Enter any month, from anywhere, for free. <strong>You don't need experience, a team or a plan yet.</strong> Pick something you care about and build the fix with whatever tools help.</p>
+          <a class="textlink" href="hackathons.html">See upcoming hackathons</a>
         </div>
-        <div class="grid grid--2">
-          <div class="card card--feature">
-            <div class="card__label">// for students</div>
-            <h3>Build something that matters</h3>
-            <ul>
-              <li>Free to enter, fully online</li>
-              <li>Beginner-friendly: no experience required</li>
-              <li>Use AI and any tools you like</li>
-              <li>Prizes and recognition every month</li>
-              <li>A portfolio piece that solves a real problem</li>
-            </ul>
-            <a class="btn btn--primary" href="hackathons.html">see_hackathons</a>
-          </div>
-          <div class="card card--feature">
-            <div class="card__label">// for sponsors &amp; donors</div>
-            <h3>Back the next generation of builders</h3>
-            <ul>
-              <li>Reach hundreds of student developers every month</li>
-              <li>Put your brand on projects with real social impact</li>
-              <li>Sponsor prizes, tools, API credits, or a full event</li>
-              <li>Meet motivated, hands-on talent early</li>
-            </ul>
-            <a class="btn btn--ghost" href="sponsor.html">become_a_sponsor</a>
-          </div>
+        <div>
+          <p class="label">Sponsors</p>
+          <h3>Put your name on a month.</h3>
+          <p>Each hackathon is a chance to back work that helps people. <strong>Fund prizes, donate API credits, or send engineers to judge and mentor.</strong> You'll meet students who ship.</p>
+          <a class="textlink" href="sponsor.html">Sponsor a month</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section section--alt" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <div class="file-tab">faq.md</div>
-          <h2>Frequently asked questions</h2>
+    <section class="section" id="faq">
+      <div class="wrap faq">
+        <div>
+          <p class="label">FAQ</p>
+          <h2 class="h2">Questions</h2>
         </div>
-        <div class="faq">
-          <details>
-            <summary>Who can participate?</summary>
-            <div><p>Our hackathons are for students. Exact eligibility (such as age requirements) can vary by event, so check each hackathon's rules page before you register.</p></div>
-          </details>
-          <details>
-            <summary>How much does it cost?</summary>
-            <div><p>Nothing. Participating in a Refactor the World hackathon is always free.</p></div>
-          </details>
-          <details>
-            <summary>Do I need coding experience?</summary>
-            <div><p>No. Our events are beginner-friendly, and plenty of participants build their very first project with us. Bring curiosity and a problem you care about.</p></div>
-          </details>
-          <details>
-            <summary>Can I use AI tools?</summary>
-            <div><p>Yes. AI is fully allowed and encouraged, from brainstorming and writing code to designing interfaces. We especially love projects where AI does something genuinely useful for the end user.</p></div>
-          </details>
-          <details>
-            <summary>Do I need a team?</summary>
-            <div><p>No. You can compete on your own or with a team. Each event's rules list any team size limits.</p></div>
-          </details>
-          <details>
-            <summary>What do I need to submit?</summary>
-            <div><p>Usually a working prototype, a link to your source code, a short project write-up, and a 2–4 minute demo video showing your project in action. Each event lists its exact requirements.</p></div>
-          </details>
-          <details>
-            <summary>How often are the hackathons?</summary>
-            <div><p>Every month, each with a new theme. Join one, or join them all.</p></div>
-          </details>
-          <details>
-            <summary>How can my company or organization get involved?</summary>
-            <div><p>We'd love to hear from you. Visit our <a href="sponsor.html">sponsor page</a> to see the ways you can support student builders.</p></div>
-          </details>
-        </div>
+        <dl>
+          <dt>Who can enter?</dt>
+          <dd>Students. Each hackathon's Devpost page lists the exact eligibility rules, so check those before you register.</dd>
+          <dt>What does it cost?</dt>
+          <dd>Nothing. Every hackathon is free to enter.</dd>
+          <dt>I've never coded. Can I still enter?</dt>
+          <dd>Yes. Plenty of people ship their first project at a hackathon, and you can use AI tools to help you learn as you go.</dd>
+          <dt>Can I use AI?</dt>
+          <dd>Yes, at every step. The strongest projects use AI to do real work for the people using them.</dd>
+          <dt>Do I need a team?</dt>
+          <dd>No. Enter on your own or with a team.</dd>
+          <dt>How do I sponsor a hackathon?</dt>
+          <dd>Start on the <a href="sponsor.html">sponsor page</a>. It lists the ways companies and organizations can help.</dd>
+        </dl>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section">
-      <div class="container">
-        <div class="cta">
-          <h2>Ready to <span class="accent-green">refactor</span> something?</h2>
-          <p class="lede">A new hackathon starts every month. Bring an idea, or find one when you get there.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="hackathons.html">join_next_hackathon</a>
-            <a class="btn btn--ghost" href="about.html">read_our_story</a>
-          </div>
+    <section class="closing">
+      <div class="wrap">
+        <p class="prompt"><span class="sigil">$</span> git checkout -b <span class="nowrap">your-fix</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="actions">
+          <a class="button" href="hackathons.html">Join the next hackathon</a>
+          <a class="textlink" href="sponsor.html">Sponsor a month</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="logo" href="index.html">
-            <img class="logo__mark" src="assets/img/favicon.svg" alt="">
-            <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
-          </a>
-          <p class="footer__tagline">A nonprofit running free, monthly hackathons where students build technology for the public good.</p>
-        </div>
-        <div>
-          <h4>// explore</h4>
-          <ul>
-            <li><a href="hackathons.html">Hackathons</a></li>
-            <li><a href="sponsor.html">Sponsor</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>// connect</h4>
-          <ul>
-            <!-- TODO: replace with the organization's contact email -->
-            <li><a href="mailto:hello@example.org">Email us</a></li>
-            <!-- TODO: add social links, e.g. <li><a href="https://discord.gg/...">Discord</a></li> -->
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>&copy; <span data-year>2026</span> Refactor the World</span>
-        <span>built by students, for the world</span>
-      </div>
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <!-- TODO: replace with the organization's contact email -->
+        <a href="mailto:hello@example.org">hello@example.org</a>
+      </nav>
     </div>
   </footer>
 
   <script src="assets/js/events.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/land.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script src="assets/js/home.js"></script>
 </body>
 </html>
