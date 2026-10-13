@@ -8,21 +8,23 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 
 | File | Page |
 |---|---|
-| `index.html` | Home: code globe hero, first-event numbers, a month as a git branch, award tracks, students and sponsors, FAQ |
-| `hackathons.html` | What's next, the standing rules, judging weights, past hackathons |
+| `index.html` | Home: code globe hero, a month as a git branch, award tracks, students and sponsors, FAQ. Mentions no specific event, so it never goes stale |
+| `hackathons.html` | What's next, the standing rules, judging weights, link to the archive |
+| `archive.html` | Every past hackathon grouped by year, with running totals and optional winners |
 | `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
 | `about.html` | Mission, the name, values, changelog, team (hidden until filled in) |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
 ## Adding or updating a hackathon
 
-Edit **`assets/js/events.js`**. It's the only file you need to touch. Each event has a `status` of `"upcoming"` or `"past"`:
+Edit **`assets/js/events.js`**. It's the only file you need to touch. The field list is at the top of the file.
 
-- The soonest `"upcoming"` event is featured on the home page. All upcoming events are listed on the Hackathons page.
-- `"past"` events appear newest first in the Past hackathons list.
-- Set `url` to the Devpost link to show a **register** button (upcoming) or link the event name (past).
+- The soonest `"upcoming"` event is featured on the Hackathons page, and its date shows in the home page status bar.
+- `"past"` events fill the Archive page, grouped by year, newest first.
+- Build numbers (`build #001`, `#002`, ...) and release tags (`v2026.10`) are worked out from the dates.
+- Running totals (hackathons run, participants, prizes) are added up from every past event's `participants` and `prizes`, and appear on the Archive, Hackathons and Sponsor pages.
 
-When an event ends, change its `status` to `"past"`, add a short `stats` line, and add the next month's event.
+When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next month's event as `"upcoming"`.
 
 ## Run locally
 
@@ -57,4 +59,4 @@ Search the code for `TODO` to find them all.
 - All pages share one stylesheet, `assets/css/site.css`. The color and font tokens are at the top.
 - `assets/js/site.js` runs on every page: it fills in event details from `events.js`, plus the small animations.
 - The home page also loads `globe.js`, which draws the hero globe from the land map in `land.js` (Natural Earth data).
-- The header and footer are repeated in each page. If you change one, update it in all five HTML files.
+- The header and footer are repeated in each page. If you change one, update it in all six HTML files.

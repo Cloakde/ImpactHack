@@ -43,9 +43,36 @@
     e.tag = e.date ? "v" + e.date.slice(0, 7).replace("-", ".") : "unreleased";
   });
 
+  function num(n) {
+    return Number(n).toLocaleString("en-US");
+  }
+
+  function statsLine(e) {
+    var parts = [];
+    if (e.participants) parts.push(num(e.participants) + " participants");
+    if (e.projects) parts.push(num(e.projects) + " projects");
+    if (e.prizes) parts.push(num(e.prizes) + " prizes");
+    return parts.join(" · ");
+  }
+
   var upcoming = events.filter(function (e) { return e.status === "upcoming"; });
   var past = events.filter(function (e) { return e.status === "past"; }).reverse();
   var next = upcoming[0];
+
+  // Running totals across every past hackathon
+  var totals = { hackathons: past.length, participants: 0, projects: 0, prizes: 0 };
+  past.forEach(function (e) {
+    totals.participants += Number(e.participants) || 0;
+    totals.projects += Number(e.projects) || 0;
+    totals.prizes += Number(e.prizes) || 0;
+  });
+  document.querySelectorAll("[data-total]").forEach(function (el) {
+    var key = el.getAttribute("data-total");
+    if (key in totals) el.textContent = num(totals[key]);
+  });
+  document.querySelectorAll("[data-shipped]").forEach(function (el) {
+    el.textContent = past.length + (past.length === 1 ? " build shipped" : " builds shipped");
+  });
 
   if (next) {
     document.querySelectorAll("[data-next-date]").forEach(function (el) {
@@ -78,7 +105,9 @@
   // Hackathons page head: a directory listing of every build
   document.querySelectorAll("[data-ls]").forEach(function (el) {
     if (!events.length) return;
-    var rows = events.slice().reverse().map(function (e) {
+    var LIMIT = 4;
+    var shown = upcoming.concat(past).slice(0, LIMIT);
+    var rows = shown.map(function (e) {
       var url = safeUrl(e.url);
       var name = url
         ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(e.slug) + "/</a>"
@@ -94,26 +123,67 @@
         "</div>"
       );
     });
+    var more = upcoming.length + past.length - shown.length;
+    if (past.length) {
+      rows.push(
+        '<div class="ls__row ls__more"><span class="ls__perm">' + (more > 0 ? "+" + more + " more" : "") + "</span>" +
+        '<a class="ls__name" href="archive.html">archive/</a></div>'
+      );
+    }
     el.innerHTML = '<div class="ls__cmd"><span class="sigil">$</span> ls -l hackathons/</div>' + rows.join("");
   });
 
-  // Hackathons page: past events as release tags
-  document.querySelectorAll("[data-tags]").forEach(function (el) {
+  // Archive page: past hackathons grouped by year, newest first
+  function renderRelease(e) {
+    var url = safeUrl(e.url);
+    var winners = Array.isArray(e.winners) ? e.winners.filter(function (w) { return w && w.project; }) : [];
+    var winnersHtml = winners.length
+      ? '<ol class="winners">' + winners.map(function (w) {
+          var wUrl = safeUrl(w.url);
+          var proj = wUrl
+            ? '<a href="' + esc(wUrl) + '" target="_blank" rel="noopener">' + esc(w.project) + "</a>"
+            : esc(w.project);
+          return "<li><span>" + esc(w.place || "") + "</span>" + proj + "</li>";
+        }).join("") + "</ol>"
+      : "";
+    var link = url
+      ? '<a class="textlink" href="' + esc(url) + '" target="_blank" rel="noopener">Projects on Devpost</a>'
+      : "";
+    return (
+      '<li class="release">' +
+        '<div class="release__tag"><span class="ref">' + esc(e.tag) + "</span>" + esc(e.build) +
+          '<span class="release__date">' + esc(e.dateLabel) + "</span></div>" +
+        '<div class="release__body">' +
+          "<h3>" + esc(e.name) + "</h3>" +
+          (e.theme ? '<p class="release__theme">' + esc(e.theme) + "</p>" : "") +
+          "<p>" + esc(e.description) + "</p>" +
+          winnersHtml +
+        "</div>" +
+        '<div class="release__stats">' + esc(statsLine(e)) + link + "</div>" +
+      "</li>"
+    );
+  }
+
+  document.querySelectorAll("[data-archive]").forEach(function (el) {
     if (!past.length) return;
-    el.innerHTML = past.map(function (e) {
-      var url = safeUrl(e.url);
-      var link = url
-        ? '<a class="textlink" href="' + esc(url) + '" target="_blank" rel="noopener">View projects</a>'
-        : "";
+    var years = {};
+    var order = [];
+    past.forEach(function (e) {
+      var y = e.date ? e.date.slice(0, 4) : "Undated";
+      if (!years[y]) {
+        years[y] = [];
+        order.push(y);
+      }
+      years[y].push(e);
+    });
+    el.innerHTML = order.map(function (y) {
+      var list = years[y];
       return (
-        '<li class="release">' +
-          '<div class="release__tag"><span class="ref">' + esc(e.tag) + "</span>" + esc(e.build) + "</div>" +
-          '<div class="release__body">' +
-            "<h3>" + esc(e.name) + "</h3>" +
-            "<p>" + esc(e.description) + "</p>" +
-          "</div>" +
-          '<div class="release__stats">' + esc(e.stats || "") + link + "</div>" +
-        "</li>"
+        '<section class="year">' +
+          '<h2 class="year__label">' + esc(y) + "</h2>" +
+          '<p class="year__count">' + list.length + (list.length === 1 ? " hackathon" : " hackathons") + "</p>" +
+          '<ol class="releases">' + list.map(renderRelease).join("") + "</ol>" +
+        "</section>"
       );
     }).join("");
   });
