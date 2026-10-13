@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hackathons — Refactor the World</title>
+  <meta name="description" content="Free, online, monthly hackathons for students. See upcoming events, how each hackathon runs, and how projects are judged.">
+  <meta property="og:title" content="Hackathons — Refactor the World">
+  <meta property="og:description" content="Free, online, monthly hackathons for students. See upcoming events, how each hackathon runs, and how projects are judged.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>try{var t=localStorage.getItem("rtw-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="logo" href="index.html" aria-label="Refactor the World home">
+        <img class="logo__mark" src="assets/img/favicon.svg" alt="">
+        <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="hackathons.html" aria-current="page">hackathons</a></li>
+        <li><a href="sponsor.html">sponsor</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="index.html#faq">faq</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">~</a> / hackathons</div>
+        <h1>Hackathons</h1>
+        <p class="lede">A new theme every month. Free, online, beginner-friendly, and AI-welcome. Here's what's coming up and what to expect.</p>
+      </div>
+    </section>
+
+    <!-- Upcoming -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="file-tab">upcoming.json</div>
+          <h2>Upcoming</h2>
+        </div>
+        <div class="grid" data-events="upcoming">
+          <p class="comment">// New events are announced monthly. Check back soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to expect -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <div class="file-tab">what_to_expect.md</div>
+          <h2>What to expect</h2>
+          <p class="lede">Every Refactor the World hackathon is built around the same principles.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="card">
+            <div class="card__icon">$0</div>
+            <h3>Always free</h3>
+            <p>No entry fees, ever. All you need is an internet connection and an idea.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">@</div>
+            <h3>Fully online</h3>
+            <p>Build from anywhere. Students from around the world compete side by side.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">01</div>
+            <h3>Beginner-friendly</h3>
+            <p>Your first project is welcome here. You'll find resources, examples, and a supportive community.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">AI</div>
+            <h3>AI welcome</h3>
+            <p>Use AI to brainstorm, code, design, and learn. Bonus points when AI does real work for your users.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">&lt;/&gt;</div>
+            <h3>Build anything</h3>
+            <p>Websites, mobile apps, AI tools, games, hardware, accessibility tools, or something entirely new.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">#1</div>
+            <h3>Prizes in many categories</h3>
+            <p>Top overall places plus awards for areas like social impact, accessibility, design, and best use of AI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Format & judging -->
+    <section class="section">
+      <div class="container split">
+        <div>
+          <div class="file-tab">format.md</div>
+          <h2>How each event runs</h2>
+          <ol class="timeline">
+            <li>
+              <h3>Theme drops</h3>
+              <p>We announce the month's theme, rules, and prizes on Devpost.</p>
+            </li>
+            <li>
+              <h3>Register &amp; team up</h3>
+              <p>Sign up solo or with a team. Find teammates in the community if you need them.</p>
+            </li>
+            <li>
+              <h3>Build</h3>
+              <p>Find a problem that fits the theme and build a working prototype with any tools you like.</p>
+            </li>
+            <li>
+              <h3>Submit</h3>
+              <p>Share your project write-up, source code, screenshots, and a 2–4 minute demo video.</p>
+            </li>
+            <li>
+              <h3>Judging &amp; winners</h3>
+              <p>Judges score every submission and winners are announced. Then the next theme drops.</p>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <div class="file-tab">judging.json</div>
+          <h2>How projects are judged</h2>
+          <p class="comment criteria__note">// typical weights; each event lists its exact criteria</p>
+          <ul class="criteria">
+            <li>
+              <div class="criteria__row"><span>impact</span><span>20%</span></div>
+              <div class="criteria__bar"><span style="width:100%"></span></div>
+              <small>Does it address a meaningful problem and provide real value?</small>
+            </li>
+            <li>
+              <div class="criteria__row"><span>technical_execution</span><span>20%</span></div>
+              <div class="criteria__bar"><span style="width:100%"></span></div>
+              <small>Quality of the implementation and technical decisions.</small>
+            </li>
+            <li>
+              <div class="criteria__row"><span>innovation</span><span>15%</span></div>
+              <div class="criteria__bar"><span style="width:75%"></span></div>
+              <small>How original and creative is the idea and approach?</small>
+            </li>
+            <li>
+              <div class="criteria__row"><span>functionality</span><span>15%</span></div>
+              <div class="criteria__bar"><span style="width:75%"></span></div>
+              <small>Do the main features work reliably in the demo?</small>
+            </li>
+            <li>
+              <div class="criteria__row"><span>use_of_ai_and_tech</span><span>15%</span></div>
+              <div class="criteria__bar"><span style="width:75%"></span></div>
+              <small>What does the technology enable the product to do?</small>
+            </li>
+            <li>
+              <div class="criteria__row"><span>presentation</span><span>15%</span></div>
+              <div class="criteria__bar"><span style="width:75%"></span></div>
+              <small>How clearly is the problem, solution, and impact communicated?</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <div class="file-tab">git log --past-events</div>
+          <h2>Past hackathons</h2>
+        </div>
+        <div data-events="past">
+          <p class="comment">// Our past events will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Want to help make these happen?</h2>
+          <p class="lede">Prizes, tools, mentors, and funding keep our hackathons free for every student.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="sponsor.html">become_a_sponsor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html">
+            <img class="logo__mark" src="assets/img/favicon.svg" alt="">
+            <span class="logo__text">refactor<span>_</span>the<span>_</span>world</span>
+          </a>
+          <p class="footer__tagline">A nonprofit running free, monthly hackathons where students build technology for the public good.</p>
+        </div>
+        <div>
+          <h4>// explore</h4>
+          <ul>
+            <li><a href="hackathons.html">Hackathons</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>// connect</h4>
+          <ul>
+            <!-- TODO: replace with the organization's contact email -->
+            <li><a href="mailto:hello@example.org">Email us</a></li>
+            <!-- TODO: add social links, e.g. <li><a href="https://discord.gg/...">Discord</a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Refactor the World</span>
+        <span>built by students, for the world</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/events.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
