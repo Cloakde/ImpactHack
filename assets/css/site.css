@@ -1264,8 +1264,7 @@ a {
 }
 
 .config-grid,
-.name-grid,
-.changelog-grid {
+.name-grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(32px, 6vw, 96px);
@@ -1274,8 +1273,7 @@ a {
 
 @media (max-width: 900px) {
   .config-grid,
-  .name-grid,
-  .changelog-grid {
+  .name-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1614,62 +1612,6 @@ a {
 
 .prompt.email a:hover {
   border-color: var(--add);
-}
-
-/* ---------- Changelog (about) ---------- */
-
-.changelog {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.changelog li {
-  position: relative;
-  padding: 0 0 40px 36px;
-  border-left: 2px solid var(--faint);
-}
-
-.changelog li:last-child {
-  padding-bottom: 0;
-  border-left-style: dashed;
-}
-
-.changelog li::before {
-  content: "";
-  position: absolute;
-  left: -8px;
-  top: 6px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--ink);
-  border: 2px solid var(--add);
-}
-
-.changelog__next::before {
-  border-style: dashed !important;
-  border-color: var(--faint) !important;
-}
-
-.changelog__ver {
-  font-family: var(--display);
-  font-stretch: 87.5%;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0 0 8px;
-  color: var(--add);
-}
-
-.changelog__ver span {
-  color: var(--paper);
-  margin-left: 10px;
-}
-
-.changelog li p:last-child {
-  color: var(--dim);
-  margin: 0;
-  max-width: 56ch;
 }
 
 /* ---------- 404 ---------- */

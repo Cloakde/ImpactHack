@@ -12,7 +12,7 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 | `hackathons.html` | What's next, the standing rules, judging weights, link to the archive |
 | `archive.html` | Every past hackathon grouped by year, with running totals and optional winners |
 | `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
-| `about.html` | Mission, the name, values, changelog, team (hidden until filled in) |
+| `about.html` | Mission, the name, values, team (hidden until filled in) |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
 ## Adding or updating a hackathon
