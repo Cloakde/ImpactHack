@@ -1776,3 +1776,8 @@ a {
     position: static;
   }
 }
+
+.prompt.email {
+  font-size: clamp(1.4rem, 4.6vw, 4.2rem);
+  overflow-wrap: anywhere;
+}

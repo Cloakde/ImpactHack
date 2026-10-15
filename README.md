@@ -47,7 +47,6 @@ The site will be live at `https://cloakde.github.io/impacthack/`. A custom domai
 
 Search the code for `TODO` to find them all.
 
-- **Contact email:** `hello@example.org` in the footer of every page and on `sponsor.html`.
 - **Social links:** footer of every page (Discord, Instagram, LinkedIn, ...).
 - **Next hackathon:** date, theme and Devpost link in `assets/js/events.js`.
 - **Team:** names, roles and bios on `about.html` (a commented-out section is ready to fill in).
