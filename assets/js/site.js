@@ -115,7 +115,8 @@
       : '<p class="next__soon">Registration opens when the theme drops.</p>';
     el.innerHTML =
       '<p class="label"><span class="live"></span>' + esc(next.build) + " &middot; upcoming</p>" +
-      '<h2 class="next__title">' + esc(next.theme) + "</h2>" +
+      '<h2 class="next__title">' + esc(next.name) + "</h2>" +
+      (next.theme ? '<p class="next__theme">' + esc(next.theme) + "</p>" : "") +
       '<dl class="next__meta">' +
         "<div><dt>Date</dt><dd>" + esc(next.dateLabel) + "</dd></div>" +
         "<div><dt>Where</dt><dd>" + esc(next.format) + "</dd></div>" +

@@ -29,15 +29,16 @@
  */
 window.RTW_EVENTS = [
   {
-    name: "Our next hackathon",
+    name: "Global AI Builders Challenge",
     status: "upcoming",
-    date: null,
-    dateLabel: "Date announced soon",
-    theme: "Theme to be revealed",
+    date: "2026-11-21",
+    dateLabel: "Nov 21–28, 2026",
+    theme: "Build something that uses AI to help people learn, create, or make an everyday task easier",
     description:
-      "The theme, dates and prizes go up on Devpost when the hackathon is announced.",
+      "An online hackathon for students. Register on Devpost, build a working AI project during the week and submit by November 28.",
     format: "Online",
-    url: null
+    url: "https://global-ai-builders-challenge.devpost.com/"
+    // TODO: add this hackathon's judging rubric (see the field list above)
   },
   {
     name: "ImpactHack 2026",

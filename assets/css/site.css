@@ -1830,3 +1830,12 @@ a {
     transition: none;
   }
 }
+
+.next__theme {
+  font-family: var(--display);
+  font-stretch: 87.5%;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  color: var(--add);
+  max-width: 48ch;
+  margin: -16px 0 36px;
+}
