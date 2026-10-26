@@ -20,6 +20,29 @@
     return ("00" + n).slice(-3);
   }
 
+  /* ---------- Phone menu ---------- */
+
+  var menuBtn = document.querySelector(".menu-btn");
+  var menu = document.getElementById("mobile-menu");
+  if (menuBtn && menu) {
+    var setMenu = function (open) {
+      menu.hidden = !open;
+      menuBtn.setAttribute("aria-expanded", String(open));
+    };
+    menuBtn.addEventListener("click", function () {
+      setMenu(menu.hidden);
+    });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !menu.hidden) {
+        setMenu(false);
+        menuBtn.focus();
+      }
+    });
+  }
+
   /* ---------- Footer year ---------- */
 
   document.querySelectorAll("[data-year]").forEach(function (el) {
@@ -102,6 +125,36 @@
       action;
   });
 
+  // Hackathons page: the next hackathon's rubric, if it has been published
+  function validRubric(e) {
+    return e && Array.isArray(e.judging)
+      ? e.judging.filter(function (c) { return c && c.name && Number(c.weight) > 0; })
+      : [];
+  }
+
+  document.querySelectorAll("[data-rubric]").forEach(function (el) {
+    var rubric = validRubric(next);
+    if (!rubric.length) return;
+    var top = Math.max.apply(null, rubric.map(function (c) { return Number(c.weight); }));
+    var cols = rubric.map(function (c) { return Number(c.weight) + "fr"; }).join(" ");
+    var label = rubric.map(function (c) { return c.name + " " + Number(c.weight) + "%"; }).join(", ");
+    el.innerHTML =
+      '<p class="body-copy">The rubric for ' + esc(next.build) + '. Criteria change with each theme, so check it before you start building.</p>' +
+      '<div class="weights" role="img" aria-label="' + esc(label) + '">' +
+        '<div class="weights__bar" aria-hidden="true">' +
+          rubric.map(function (c) {
+            return '<span class="' + (Number(c.weight) === top ? "is-top" : "") + '" style="flex-basis:' + Number(c.weight) + '%"></span>';
+          }).join("") +
+        "</div>" +
+        '<ol class="weights__list" style="grid-template-columns:' + cols + '">' +
+          rubric.map(function (c) {
+            return '<li class="' + (Number(c.weight) === top ? "is-top" : "") + '"><b>' + Number(c.weight) + "%</b><span>" + esc(c.name) + "</span>" +
+              (c.description ? "<small>" + esc(c.description) + "</small>" : "") + "</li>";
+          }).join("") +
+        "</ol>" +
+      "</div>";
+  });
+
   // Hackathons page head: a directory listing of every build
   document.querySelectorAll("[data-ls]").forEach(function (el) {
     if (!events.length) return;
@@ -157,6 +210,11 @@
           "<h3>" + esc(e.name) + "</h3>" +
           (e.theme ? '<p class="release__theme">' + esc(e.theme) + "</p>" : "") +
           "<p>" + esc(e.description) + "</p>" +
+          (validRubric(e).length
+            ? '<p class="release__rubric">Judged on ' + validRubric(e).map(function (c) {
+                return esc(c.name) + " " + Number(c.weight) + "%";
+              }).join(" · ") + "</p>"
+            : "") +
           winnersHtml +
         "</div>" +
         '<div class="release__stats">' + esc(statsLine(e)) + link + "</div>" +

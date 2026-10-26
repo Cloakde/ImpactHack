@@ -9,7 +9,19 @@
   <meta property="og:description" content="A free, online hackathon every season for students. See what's next, how each event runs, how projects are judged and what's shipped so far.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#07090d">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://refactortheworld.org/hackathons.html">
+  <meta property="og:url" content="https://refactortheworld.org/hackathons.html">
+  <meta property="og:site_name" content="Refactor the World">
+  <meta property="og:image" content="https://refactortheworld.org/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Refactor the world. Four free online hackathons a year for students.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://refactortheworld.org/assets/img/og.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
@@ -27,8 +39,15 @@
         <a class="hide-sm" href="sponsor.html">Sponsor</a>
         <a class="hide-sm" href="about.html">About</a>
         <a class="join" href="hackathons.html">Join</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><span></span><span></span></button>
       </nav>
     </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <a href="hackathons.html" aria-current="page">Hackathons</a>
+      <a href="archive.html">Archive</a>
+      <a href="sponsor.html">Sponsor</a>
+      <a href="about.html">About</a>
+    </nav>
   </header>
 
   <main id="main">
@@ -84,25 +103,9 @@
     <section class="section">
       <div class="wrap">
         <p class="label">Judging</p>
-        <h2 class="h2">How projects are scored.</h2>
-        <p class="body-copy">Typical weights. Each event lists its exact criteria on its Devpost page.</p>
-        <div class="weights" role="img" aria-label="Impact 20%, technical execution 20%, innovation 15%, functionality 15%, use of AI and technology 15%, presentation and demo 15%">
-          <div class="weights__bar" aria-hidden="true">
-            <span style="flex-basis:20%"></span>
-            <span style="flex-basis:20%"></span>
-            <span style="flex-basis:15%"></span>
-            <span style="flex-basis:15%"></span>
-            <span style="flex-basis:15%"></span>
-            <span style="flex-basis:15%"></span>
-          </div>
-          <ol class="weights__list">
-            <li><b>20%</b><span>Impact</span><small>Does it solve a meaningful problem for real people?</small></li>
-            <li><b>20%</b><span>Technical execution</span><small>How well is it designed and built?</small></li>
-            <li><b>15%</b><span>Innovation</span><small>How original is the idea and the approach?</small></li>
-            <li><b>15%</b><span>Functionality</span><small>Do the main features actually work in the demo?</small></li>
-            <li><b>15%</b><span>Use of AI &amp; tech</span><small>What does the technology let the product do?</small></li>
-            <li><b>15%</b><span>Presentation</span><small>How clearly does the team explain the problem and the fix?</small></li>
-          </ol>
+        <h2 class="h2">Every hackathon, its own rubric.</h2>
+        <div data-rubric>
+          <p class="body-copy">Judging criteria change with each theme. The rubric is published when the theme drops, on this page and on the event's Devpost page, so you know how you'll be scored before you start building.</p>
         </div>
       </div>
     </section>
