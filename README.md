@@ -1,6 +1,6 @@
 # Refactor the World
 
-Website for **Refactor the World**, a nonprofit running free, online, monthly hackathons where students build technology for the public good.
+Website for **Refactor the World**, a nonprofit running free, online, seasonal hackathons (four a year) where students build technology for the public good.
 
 Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free on GitHub Pages.
 
@@ -8,7 +8,7 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 
 | File | Page |
 |---|---|
-| `index.html` | Home: code globe hero, a month as a git branch, award tracks, students and sponsors, FAQ. Mentions no specific event, so it never goes stale |
+| `index.html` | Home: code globe hero, a hackathon as a git branch, award tracks, students and sponsors, FAQ. Mentions no specific event, so it never goes stale |
 | `hackathons.html` | What's next, the standing rules, judging weights, link to the archive |
 | `archive.html` | Every past hackathon grouped by year, with running totals and optional winners |
 | `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
@@ -24,7 +24,7 @@ Edit **`assets/js/events.js`**. It's the only file you need to touch. The field 
 - Build numbers (`build #001`, `#002`, ...) and release tags (`v2026.10`) are worked out from the dates.
 - Running totals (hackathons run, participants, prizes) are added up from every past event's `participants` and `prizes`, and appear on the Archive, Hackathons and Sponsor pages.
 
-When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next month's event as `"upcoming"`.
+When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next season's event as `"upcoming"`.
 
 ## Run locally
 
