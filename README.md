@@ -41,7 +41,7 @@ python3 -m http.server 8000
 2. In the repo on GitHub, go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
 
-The site will be live at `https://cloakde.github.io/impacthack/`. A custom domain can be added later in the same settings page.
+The site is served at **https://refactortheworld.org** (set by the `CNAME` file). DNS: four A records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`, plus a `www` CNAME to `cloakde.github.io`.
 
 ## Placeholders to fill in
 
