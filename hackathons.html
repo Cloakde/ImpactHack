@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hackathons · Refactor the World</title>
+  <meta name="description" content="A free, online hackathon every month for students. See what's next, how each event runs, how projects are judged and what's shipped so far.">
+  <meta property="og:title" content="Hackathons · Refactor the World">
+  <meta property="og:description" content="A free, online hackathon every month for students. See what's next, how each event runs, how projects are judged and what's shipped so far.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07090d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html" aria-current="page">Hackathons</a>
+        <a class="hide-sm" href="archive.html">Archive</a>
+        <a class="hide-sm" href="sponsor.html">Sponsor</a>
+        <a class="hide-sm" href="about.html">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap page-head__grid">
+        <div>
+          <p class="label">Hackathons</p>
+          <h1 class="title">One a<br>month.</h1>
+          <p class="lede">A new theme every month. Free, online and open to students anywhere, whether it's your first project or your fiftieth.</p>
+        </div>
+        <div class="ls" data-ls>
+          <div class="ls__cmd"><span class="sigil">$</span> ls -l hackathons/</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap next" data-next>
+        <p class="label">Up next</p>
+        <h2 class="next__title">Theme to be revealed</h2>
+        <p class="next__soon">Registration opens when the theme drops.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap config-grid">
+        <div>
+          <p class="label">The rules that never change</p>
+          <h2 class="h2">Same setup, every month.</h2>
+          <p class="body-copy">The theme changes. These don't. Each event's Devpost page has the full rules, including eligibility and team size limits.</p>
+        </div>
+        <div class="code" role="group" aria-label="hackathon.config">
+          <div class="code__bar">hackathon.config</div>
+<pre><code><span class="k">entry_fee</span>     = <span class="n">0</span>
+<span class="k">location</span>      = <span class="s">"online"</span>
+<span class="k">open_to</span>       = <span class="s">"students, worldwide"</span>
+<span class="k">experience</span>    = <span class="s">"none required"</span>
+<span class="k">teams</span>         = <span class="s">"solo or team"</span>
+<span class="k">ai_tools</span>      = <span class="n">true</span>        <span class="c"># at every step</span>
+<span class="k">build</span>         = <span class="s">"anything that works"</span>
+<span class="c"># websites, apps, AI tools, games, hardware</span>
+
+<span class="k">submit</span> = [
+  <span class="s">"working prototype"</span>,
+  <span class="s">"source code"</span>,
+  <span class="s">"short write-up"</span>,
+  <span class="s">"2–4 min demo video"</span>,
+]</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="label">Judging</p>
+        <h2 class="h2">How projects are scored.</h2>
+        <p class="body-copy">Typical weights. Each event lists its exact criteria on its Devpost page.</p>
+        <div class="weights" role="img" aria-label="Impact 20%, technical execution 20%, innovation 15%, functionality 15%, use of AI and technology 15%, presentation and demo 15%">
+          <div class="weights__bar" aria-hidden="true">
+            <span style="flex-basis:20%"></span>
+            <span style="flex-basis:20%"></span>
+            <span style="flex-basis:15%"></span>
+            <span style="flex-basis:15%"></span>
+            <span style="flex-basis:15%"></span>
+            <span style="flex-basis:15%"></span>
+          </div>
+          <ol class="weights__list">
+            <li><b>20%</b><span>Impact</span><small>Does it solve a meaningful problem for real people?</small></li>
+            <li><b>20%</b><span>Technical execution</span><small>How well is it designed and built?</small></li>
+            <li><b>15%</b><span>Innovation</span><small>How original is the idea and the approach?</small></li>
+            <li><b>15%</b><span>Functionality</span><small>Do the main features actually work in the demo?</small></li>
+            <li><b>15%</b><span>Use of AI &amp; tech</span><small>What does the technology let the product do?</small></li>
+            <li><b>15%</b><span>Presentation</span><small>How clearly does the team explain the problem and the fix?</small></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap archive-link">
+        <div>
+          <p class="label">Shipped</p>
+          <h2 class="h2">Past hackathons</h2>
+          <p class="body-copy">Every hackathon we've run, with themes, numbers and winners. So far, <strong><span data-total="participants">450</span> students</strong> have taken part.</p>
+        </div>
+        <a class="button" href="archive.html">Browse the archive</a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <p class="prompt"><span class="sigil">$</span> sponsor <span class="nowrap">next_month</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="actions">
+          <a class="button" href="sponsor.html">Help keep it free</a>
+          <a class="textlink" href="about.html">Why we do this</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="archive.html">Archive</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <a href="mailto:refactortheworld@gmail.com">refactortheworld@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/events.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Refactor the World</title>
+  <meta name="description" content="Refactor the World is a nonprofit running a free, online hackathon every month where students build fixes for real problems.">
+  <meta property="og:title" content="Refactor the World">
+  <meta property="og:description" content="A free, online hackathon every month for students who want to fix real problems.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07090d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html">Hackathons</a>
+        <a class="hide-sm" href="archive.html">Archive</a>
+        <a class="hide-sm" href="sponsor.html">Sponsor</a>
+        <a class="hide-sm" href="about.html">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker"><span><b>&#9679;</b> Nonprofit</span><span>Free hackathons every month</span><span>Online, worldwide</span></p>
+          <h1 class="headline">
+            <span>Refactor</span>
+            <span class="struck" data-scramble>the world.</span>
+          </h1>
+          <p class="hero__lede">Every month we pick a theme, and students anywhere get a build window to make something that fixes a real problem. <em>Entry is free and AI tools are allowed.</em></p>
+          <div class="actions">
+            <a class="button" href="hackathons.html">Join the next hackathon</a>
+            <a class="textlink" href="sponsor.html">Sponsor a month</a>
+          </div>
+        </div>
+
+        <div class="hero__globe">
+          <canvas id="globe" role="img" aria-label="A rotating globe drawn in code characters. A green wave sweeps around it, rewriting red noise into clean code."></canvas>
+          <div class="globe-note" aria-hidden="true">
+            <span class="k-add">just refactored</span>
+            <span class="k-clean">shipped</span>
+            <span class="k-del">still broken</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="statusbar">
+        <div class="wrap">
+          <span class="branch">main</span>
+          <span data-next-build>build #002</span>
+          <span>next: <span data-next-date>date announced soon</span></span>
+          <a class="push" href="archive.html" data-shipped>past builds</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap proof">
+        <p class="proof__num" aria-hidden="true">12</p>
+        <div class="proof__text">
+          <p><span class="sr-only">12 </span>hackathons a year. One every month, each with a new theme.</p>
+          <ul class="facts">
+            <li>$0 entry fee</li>
+            <li>online, worldwide</li>
+            <li>beginners welcome</li>
+            <li>AI allowed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap month">
+        <div class="month__intro">
+          <p class="label">How a month works</p>
+          <h2 class="h2">Every hackathon is one branch.</h2>
+          <p class="body-copy">A theme goes out at the start of the month. <strong>You branch off, build, and merge back with a working demo.</strong> Judges pick the winners, and the next theme drops.</p>
+        </div>
+
+        <div class="gitlog-wrap" data-gitlog>
+        <div class="gitlog__progress" aria-hidden="true"></div>
+        <ol class="gitlog">
+          <li class="c-main">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Theme drops <span class="ref ref--main">main</span></p>
+              <p class="commit__desc">The month's problem space, rules and prizes go up on Devpost.</p>
+            </div>
+          </li>
+          <li class="c-fork">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">git checkout -b your-team</p>
+              <p class="commit__desc">Register on your own or with a team.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Pick a problem</p>
+              <p class="commit__desc">Something real inside the theme: your school, your town, someone you know.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Build the fix</p>
+              <p class="commit__desc">Any language, any framework, any tools. AI is allowed from brainstorming to the final commit.</p>
+            </div>
+          </li>
+          <li class="c-branch">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Record the demo</p>
+              <p class="commit__desc">A 2&ndash;4 minute video of the project actually working.</p>
+            </div>
+          </li>
+          <li class="c-merge">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Merge: submit</p>
+              <p class="commit__desc">Code, a short write-up, screenshots and the video.</p>
+            </div>
+          </li>
+          <li class="c-tag">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Winners announced <span class="ref">tag</span></p>
+              <p class="commit__desc">Judges score impact, technical execution, creativity, functionality, use of AI and the demo.</p>
+            </div>
+          </li>
+          <li class="c-next">
+            <div class="graph" aria-hidden="true"></div>
+            <div class="commit">
+              <p class="commit__msg">Next theme drops</p>
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="label">What gets built</p>
+        <ul class="tracks" data-tracks>
+          <li>Social impact</li>
+          <li>Education</li>
+          <li>Accessibility</li>
+          <li>AI that does real work</li>
+          <li>Productivity</li>
+          <li>Automation</li>
+          <li>Data &amp; analytics</li>
+          <li>Hardware &amp; IoT</li>
+          <li>Design &amp; UX</li>
+          <li>Something nobody has tried yet</li>
+        </ul>
+        <p class="body-copy tracks-note">Typical award categories. Projects can be websites, mobile apps, AI tools, games, hardware or anything else that works.</p>
+      </div>
+    </section>
+
+    <section aria-label="Get involved">
+      <div class="wrap split">
+        <div>
+          <p class="label">Students</p>
+          <h3>Bring a problem. Leave with a project.</h3>
+          <p>Enter any month, from anywhere, for free. <strong>You don't need experience, a team or a plan yet.</strong> Pick something you care about and build the fix with whatever tools help.</p>
+          <a class="textlink" href="hackathons.html">See upcoming hackathons</a>
+        </div>
+        <div>
+          <p class="label">Sponsors</p>
+          <h3>Put your name on a month.</h3>
+          <p>Each hackathon is a chance to back work that helps people. <strong>Fund prizes, donate API credits, or send engineers to judge and mentor.</strong> You'll meet students who ship.</p>
+          <a class="textlink" href="sponsor.html">Sponsor a month</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap faq">
+        <div>
+          <p class="label">FAQ</p>
+          <h2 class="h2">Questions</h2>
+        </div>
+        <dl>
+          <dt>Who can enter?</dt>
+          <dd>Students. Each hackathon's Devpost page lists the exact eligibility rules, so check those before you register.</dd>
+          <dt>What does it cost?</dt>
+          <dd>Nothing. Every hackathon is free to enter.</dd>
+          <dt>I've never coded. Can I still enter?</dt>
+          <dd>Yes. Plenty of people ship their first project at a hackathon, and you can use AI tools to help you learn as you go.</dd>
+          <dt>Can I use AI?</dt>
+          <dd>Yes, at every step. The strongest projects use AI to do real work for the people using them.</dd>
+          <dt>Do I need a team?</dt>
+          <dd>No. Enter on your own or with a team.</dd>
+          <dt>How do I sponsor a hackathon?</dt>
+          <dd>Start on the <a href="sponsor.html">sponsor page</a>, which lists the ways companies and organizations can help, or email us at <a href="mailto:refactortheworld@gmail.com">refactortheworld@gmail.com</a>.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <p class="prompt"><span class="sigil">$</span> git checkout -b <span class="nowrap">your-fix</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="actions">
+          <a class="button" href="hackathons.html">Join the next hackathon</a>
+          <a class="textlink" href="sponsor.html">Sponsor a month</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="archive.html">Archive</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <a href="mailto:refactortheworld@gmail.com">refactortheworld@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/events.js"></script>
+  <script src="assets/js/land.js"></script>
+  <script src="assets/js/globe.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

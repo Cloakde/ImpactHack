@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Page not found · Refactor the World</title>
+  <meta name="description" content="This page doesn't exist.">
+  <meta property="og:title" content="Page not found · Refactor the World">
+  <meta property="og:description" content="This page doesn't exist.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07090d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">refactor<i>(</i>world<i>)</i></a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="hackathons.html">Hackathons</a>
+        <a class="hide-sm" href="archive.html">Archive</a>
+        <a class="hide-sm" href="sponsor.html">Sponsor</a>
+        <a class="hide-sm" href="about.html">About</a>
+        <a class="join" href="hackathons.html">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head not-found">
+      <div class="wrap">
+        <p class="label">Error</p>
+        <h1 class="title outline">404</h1>
+        <div class="code" role="group" aria-label="error.log">
+          <div class="code__bar">error.log</div>
+<pre><code><span class="k">const</span> page = world.find(location.pathname);
+<span class="c">// =&gt; undefined</span>
+<span class="del">Error: this page doesn't exist. It may have been refactored away.</span></code></pre>
+        </div>
+        <div class="actions">
+          <a class="button" href="index.html">Back to the home page</a>
+          <a class="textlink" href="hackathons.html">See the hackathons</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>&copy; <span data-year>2026</span> Refactor the World. A nonprofit.</span>
+      <nav aria-label="Footer">
+        <a href="hackathons.html">Hackathons</a>
+        <a href="archive.html">Archive</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="about.html">About</a>
+        <a href="mailto:refactortheworld@gmail.com">refactortheworld@gmail.com</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/events.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
