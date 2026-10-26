@@ -27,7 +27,7 @@
   }
 
   /* ---- Glyphs ---- */
-  var CLEAN = "function refactor(world){for(const problem of world.problems){ship(fix(problem));}return world;}const team=students.filter(cares);await build(team,{month:next});";
+  var CLEAN = "function refactor(world){for(const problem of world.problems){ship(fix(problem));}return world;}const team=students.filter(cares);await build(team,{season:next});";
   var NOISE = "#%&@$?!*~^<>{}|;";
 
   function hash(a, b) {

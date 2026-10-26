@@ -4,16 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Refactor the World</title>
-  <meta name="description" content="Refactor the World is a nonprofit running a free, online hackathon every month where students build fixes for real problems.">
+  <meta name="description" content="Refactor the World is a nonprofit running a free, online hackathon every season where students build fixes for real problems.">
   <meta property="og:title" content="Refactor the World">
-  <meta property="og:description" content="A free, online hackathon every month for students who want to fix real problems.">
+  <meta property="og:description" content="A free, online hackathon every season for students who want to fix real problems.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#07090d">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://refactortheworld.org/">
+  <meta property="og:url" content="https://refactortheworld.org/">
+  <meta property="og:site_name" content="Refactor the World">
+  <meta property="og:image" content="https://refactortheworld.org/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Refactor the world. Four free online hackathons a year for students.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://refactortheworld.org/assets/img/og.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NGO", "name": "Refactor the World", "url": "https://refactortheworld.org/", "logo": "https://refactortheworld.org/assets/img/icon-512.png", "email": "refactortheworld@gmail.com", "description": "A nonprofit running four free, online hackathons a year where students build fixes for real problems."}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -27,33 +40,35 @@
         <a class="hide-sm" href="sponsor.html">Sponsor</a>
         <a class="hide-sm" href="about.html">About</a>
         <a class="join" href="hackathons.html">Join</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><span></span><span></span></button>
       </nav>
     </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <a href="hackathons.html">Hackathons</a>
+      <a href="archive.html">Archive</a>
+      <a href="sponsor.html">Sponsor</a>
+      <a href="about.html">About</a>
+    </nav>
   </header>
 
   <main id="main">
     <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="kicker"><span><b>&#9679;</b> Nonprofit</span><span>Free hackathons every month</span><span>Online, worldwide</span></p>
+          <p class="kicker"><span><b>&#9679;</b> Nonprofit</span><span>Free hackathons every season</span><span>Online, worldwide</span></p>
           <h1 class="headline">
             <span>Refactor</span>
             <span class="struck" data-scramble>the world.</span>
           </h1>
-          <p class="hero__lede">Every month we pick a theme, and students anywhere get a build window to make something that fixes a real problem. <em>Entry is free and AI tools are allowed.</em></p>
+          <p class="hero__lede">Every season we pick a theme, and students anywhere get a build window to make something that fixes a real problem. <em>Entry is free and AI tools are allowed.</em></p>
           <div class="actions">
             <a class="button" href="hackathons.html">Join the next hackathon</a>
-            <a class="textlink" href="sponsor.html">Sponsor a month</a>
+            <a class="textlink" href="sponsor.html">Sponsor a hackathon</a>
           </div>
         </div>
 
         <div class="hero__globe">
           <canvas id="globe" role="img" aria-label="A rotating globe drawn in code characters. A green wave sweeps around it, rewriting red noise into clean code."></canvas>
-          <div class="globe-note" aria-hidden="true">
-            <span class="k-add">just refactored</span>
-            <span class="k-clean">shipped</span>
-            <span class="k-del">still broken</span>
-          </div>
         </div>
       </div>
 
@@ -69,9 +84,9 @@
 
     <section class="section">
       <div class="wrap proof">
-        <p class="proof__num" aria-hidden="true">12</p>
+        <p class="proof__num" aria-hidden="true">4</p>
         <div class="proof__text">
-          <p><span class="sr-only">12 </span>hackathons a year. One every month, each with a new theme.</p>
+          <p><span class="sr-only">4 </span>hackathons a year. One every season, each with a new theme.</p>
           <ul class="facts">
             <li>$0 entry fee</li>
             <li>online, worldwide</li>
@@ -85,9 +100,9 @@
     <section class="section">
       <div class="wrap month">
         <div class="month__intro">
-          <p class="label">How a month works</p>
+          <p class="label">How a hackathon works</p>
           <h2 class="h2">Every hackathon is one branch.</h2>
-          <p class="body-copy">A theme goes out at the start of the month. <strong>You branch off, build, and merge back with a working demo.</strong> Judges pick the winners, and the next theme drops.</p>
+          <p class="body-copy">A theme goes out at the start of each season. <strong>You branch off, build, and merge back with a working demo.</strong> Judges pick the winners, and the next theme drops.</p>
         </div>
 
         <div class="gitlog-wrap" data-gitlog>
@@ -97,7 +112,7 @@
             <div class="graph" aria-hidden="true"></div>
             <div class="commit">
               <p class="commit__msg">Theme drops <span class="ref ref--main">main</span></p>
-              <p class="commit__desc">The month's problem space, rules and prizes go up on Devpost.</p>
+              <p class="commit__desc">The season's theme, rules and prizes go up on Devpost.</p>
             </div>
           </li>
           <li class="c-fork">
@@ -139,7 +154,7 @@
             <div class="graph" aria-hidden="true"></div>
             <div class="commit">
               <p class="commit__msg">Winners announced <span class="ref">tag</span></p>
-              <p class="commit__desc">Judges score impact, technical execution, creativity, functionality, use of AI and the demo.</p>
+              <p class="commit__desc">Judges score every project against that hackathon's rubric, published when the theme drops.</p>
             </div>
           </li>
           <li class="c-next">
@@ -177,14 +192,14 @@
         <div>
           <p class="label">Students</p>
           <h3>Bring a problem. Leave with a project.</h3>
-          <p>Enter any month, from anywhere, for free. <strong>You don't need experience, a team or a plan yet.</strong> Pick something you care about and build the fix with whatever tools help.</p>
+          <p>Enter any season, from anywhere, for free. <strong>You don't need experience, a team or a plan yet.</strong> Pick something you care about and build the fix with whatever tools help.</p>
           <a class="textlink" href="hackathons.html">See upcoming hackathons</a>
         </div>
         <div>
           <p class="label">Sponsors</p>
-          <h3>Put your name on a month.</h3>
+          <h3>Put your name on a season.</h3>
           <p>Each hackathon is a chance to back work that helps people. <strong>Fund prizes, donate API credits, or send engineers to judge and mentor.</strong> You'll meet students who ship.</p>
-          <a class="textlink" href="sponsor.html">Sponsor a month</a>
+          <a class="textlink" href="sponsor.html">Sponsor a hackathon</a>
         </div>
       </div>
     </section>
@@ -217,7 +232,7 @@
         <p class="prompt"><span class="sigil">$</span> git checkout -b <span class="nowrap">your-fix</span><span class="caret" aria-hidden="true"></span></p>
         <div class="actions">
           <a class="button" href="hackathons.html">Join the next hackathon</a>
-          <a class="textlink" href="sponsor.html">Sponsor a month</a>
+          <a class="textlink" href="sponsor.html">Sponsor a hackathon</a>
         </div>
       </div>
     </section>

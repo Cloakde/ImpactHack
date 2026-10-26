@@ -1,6 +1,6 @@
 # Refactor the World
 
-Website for **Refactor the World**, a nonprofit running free, online, monthly hackathons where students build technology for the public good.
+Website for **Refactor the World**, a nonprofit running free, online, seasonal hackathons (four a year) where students build technology for the public good.
 
 Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free on GitHub Pages.
 
@@ -8,8 +8,8 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 
 | File | Page |
 |---|---|
-| `index.html` | Home: code globe hero, a month as a git branch, award tracks, students and sponsors, FAQ. Mentions no specific event, so it never goes stale |
-| `hackathons.html` | What's next, the standing rules, judging weights, link to the archive |
+| `index.html` | Home: code globe hero, a hackathon as a git branch, award tracks, students and sponsors, FAQ. Mentions no specific event, so it never goes stale |
+| `hackathons.html` | What's next, the standing rules, that hackathon's judging rubric, link to the archive |
 | `archive.html` | Every past hackathon grouped by year, with running totals and optional winners |
 | `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
 | `about.html` | Mission, the name, values, team (hidden until filled in) |
@@ -24,7 +24,9 @@ Edit **`assets/js/events.js`**. It's the only file you need to touch. The field 
 - Build numbers (`build #001`, `#002`, ...) and release tags (`v2026.10`) are worked out from the dates.
 - Running totals (hackathons run, participants, prizes) are added up from every past event's `participants` and `prizes`, and appear on the Archive, Hackathons and Sponsor pages.
 
-When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next month's event as `"upcoming"`.
+Each hackathon can have its own judging rubric (`judging`). The next hackathon's rubric is drawn to scale on the Hackathons page as soon as you add it; until then the page says the rubric is published with the theme.
+
+When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next season's event as `"upcoming"`.
 
 ## Run locally
 
@@ -58,4 +60,6 @@ Search the code for `TODO` to find them all.
 - All pages share one stylesheet, `assets/css/site.css`. The color and font tokens are at the top.
 - `assets/js/site.js` runs on every page: it fills in event details from `events.js`, plus the small animations.
 - The home page also loads `globe.js`, which draws the hero globe from the land map in `land.js` (Natural Earth data).
-- The header and footer are repeated in each page. If you change one, update it in all six HTML files.
+- `assets/img/` holds the logo as the tab icon (`favicon-32/64.png`), phone home-screen icons (`icon-180/512.png`) and the social preview card (`og.png`, 1200×630) used when links are shared.
+- `sitemap.xml`, `robots.txt` and `site.webmanifest` are for search engines and phones. Add any new page to `sitemap.xml`.
+- The header and footer (including the phone menu) are repeated in each page. If you change one, update it in all six HTML files.
