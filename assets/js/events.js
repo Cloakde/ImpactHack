@@ -16,6 +16,8 @@
  *   participants  Number of participants (past events). Optional.
  *   projects      Number of submitted projects (past events). Optional.
  *   prizes        Number of prizes awarded (past events). Optional.
+ *   rubricUrl     Optional link to the full rubric (e.g. the Devpost Resources page).
+ *   rubricUnit    "points" to show weights as points instead of percentages.
  *   judging       Optional rubric for this hackathon, e.g.
  *                 [{ name: "Impact", weight: 25, description: "Does it help real people?" }]
  *                 Weights are percentages and should add up to 100. The next
@@ -29,15 +31,25 @@
  */
 window.RTW_EVENTS = [
   {
-    name: "Our next hackathon",
+    name: "Global AI Builder’s Challenge",
     status: "upcoming",
-    date: null,
-    dateLabel: "Date announced soon",
-    theme: "Theme to be revealed",
+    date: "2026-11-21",
+    dateLabel: "Nov 21–28, 2026",
+    theme: "Build something that uses AI to help people learn, create, or make an everyday task easier",
     description:
-      "The theme, dates and prizes go up on Devpost when the hackathon is announced.",
+      "Free and online for students aged 13 and up. Work solo or in a team of up to six to build a new project or meaningfully improve an existing one. Submissions close November 28 at 3:00 p.m. PST, and winners are announced December 5.",
     format: "Online",
-    url: null
+    url: "https://global-ai-builders-challenge.devpost.com/",
+    rubricUrl: "https://global-ai-builders-challenge.devpost.com/resources",
+    rubricUnit: "points",
+    prizes: 32,
+    // Rubric sections and points as published on the Devpost page (out of 100)
+    judging: [
+      { name: "Problem Value & Practicality", weight: 20, description: "Supported user need, project fit, an advantage over the current approach, and realistic use by the intended users." },
+      { name: "AI Integration & Development", weight: 30, description: "Justified AI choice, effective implementation, AI assessment with results and limits, and checked AI-assisted development." },
+      { name: "Functionality & Reliability", weight: 30, description: "Complete main task, correct results across cases, and safe failure handling." },
+      { name: "Design Quality & User Experience", weight: 20, description: "Clear emphasis, consistent design, reduced user effort, and understandable information." }
+    ]
   },
   {
     name: "ImpactHack 2026",

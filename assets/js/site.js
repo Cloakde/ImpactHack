@@ -115,7 +115,8 @@
       : '<p class="next__soon">Registration opens when the theme drops.</p>';
     el.innerHTML =
       '<p class="label"><span class="live"></span>' + esc(next.build) + " &middot; upcoming</p>" +
-      '<h2 class="next__title">' + esc(next.theme) + "</h2>" +
+      '<h2 class="next__title">' + esc(next.name) + "</h2>" +
+      (next.theme ? '<p class="next__theme">' + esc(next.theme) + "</p>" : "") +
       '<dl class="next__meta">' +
         "<div><dt>Date</dt><dd>" + esc(next.dateLabel) + "</dd></div>" +
         "<div><dt>Where</dt><dd>" + esc(next.format) + "</dd></div>" +
@@ -137,9 +138,10 @@
     if (!rubric.length) return;
     var top = Math.max.apply(null, rubric.map(function (c) { return Number(c.weight); }));
     var cols = rubric.map(function (c) { return Number(c.weight) + "fr"; }).join(" ");
-    var label = rubric.map(function (c) { return c.name + " " + Number(c.weight) + "%"; }).join(", ");
+    var unit = next.rubricUnit === "points" ? " pts" : "%";
+    var label = rubric.map(function (c) { return c.name + " " + Number(c.weight) + unit; }).join(", ");
     el.innerHTML =
-      '<p class="body-copy">The rubric for ' + esc(next.build) + '. Criteria change with each theme, so check it before you start building.</p>' +
+      '<p class="body-copy">The rubric for ' + esc(next.name) + ', out of 100 points. Criteria change with each hackathon, so check it before you start building.</p>' +
       '<div class="weights" role="img" aria-label="' + esc(label) + '">' +
         '<div class="weights__bar" aria-hidden="true">' +
           rubric.map(function (c) {
@@ -148,11 +150,14 @@
         "</div>" +
         '<ol class="weights__list" style="grid-template-columns:' + cols + '">' +
           rubric.map(function (c) {
-            return '<li class="' + (Number(c.weight) === top ? "is-top" : "") + '"><b>' + Number(c.weight) + "%</b><span>" + esc(c.name) + "</span>" +
+            return '<li class="' + (Number(c.weight) === top ? "is-top" : "") + '"><b>' + Number(c.weight) + unit + "</b><span>" + esc(c.name) + "</span>" +
               (c.description ? "<small>" + esc(c.description) + "</small>" : "") + "</li>";
           }).join("") +
         "</ol>" +
-      "</div>";
+      "</div>" +
+      (safeUrl(next.rubricUrl)
+        ? '<p class="rubric-link"><a class="textlink" href="' + esc(next.rubricUrl) + '" target="_blank" rel="noopener">Read the full rubric</a></p>'
+        : "");
   });
 
   // Hackathons page head: a directory listing of every build
