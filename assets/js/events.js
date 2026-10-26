@@ -52,13 +52,14 @@ window.RTW_EVENTS = [
     participants: 450,
     projects: null,
     prizes: 23,
+    // Rubric exactly as published on the ImpactHack 2026 Devpost page
     judging: [
-      { name: "Impact", weight: 20, description: "Does it solve a meaningful problem for real people?" },
-      { name: "Technical execution", weight: 20, description: "How well is it designed and built?" },
-      { name: "Innovation", weight: 15, description: "How original is the idea and the approach?" },
-      { name: "Functionality", weight: 15, description: "Do the main features actually work in the demo?" },
-      { name: "Use of AI & tech", weight: 15, description: "What does the technology let the product do?" },
-      { name: "Presentation", weight: 15, description: "How clearly does the team explain the problem and the fix?" }
+      { name: "Impact", weight: 20, description: "Does the project address a meaningful problem or provide genuine value to its users?" },
+      { name: "Technical Execution", weight: 20, description: "How effectively was the project designed and developed?" },
+      { name: "Innovation & Creativity", weight: 15, description: "How original, creative, or interesting is the project?" },
+      { name: "Functionality", weight: 15, description: "How well does the project actually work?" },
+      { name: "Use of AI & Technology", weight: 15, description: "How effectively does the project use AI or other technology to expand its capabilities?" },
+      { name: "Presentation & Demo", weight: 15, description: "How clearly and effectively does the team communicate its problem, solution, features, and impact?" }
     ],
     winners: []
   }
