@@ -27,7 +27,7 @@ Edit **`assets/js/events.js`**. It's the only file you need to touch. The field 
 
 Each hackathon can have its own judging rubric (`judging`). The next hackathon's rubric is drawn to scale on the Hackathons page as soon as you add it; until then the page says the rubric is published with the theme.
 
-List each hackathon's `judges` and `sponsors` in the same entry. They're thanked on the Credits page (one entry per person, with every hackathon they helped), shown as "Meet the judges" on the Hackathons page for the next event, and named in the archive. Sponsor sections stay hidden until the first sponsor is added; put sponsor logos in `assets/img/sponsors/`.
+List each hackathon's `judges` and `sponsors` in the same entry. They're thanked on the Credits page (one entry per person, with every hackathon they helped), shown as "Meet the judges" on the Hackathons page for the next event, and named in the archive. Sponsor sections stay hidden until the first sponsor is added. Put sponsor logos in `assets/img/sponsors/`; they're shown on light tiles, so logos made for white backgrounds work as-is. The next hackathon's sponsors and what they give also appear on the Hackathons page.
 
 When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next season's event as `"upcoming"`.
 

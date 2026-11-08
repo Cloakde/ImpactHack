@@ -349,26 +349,44 @@
     }).join("") + "</ul>";
   });
 
-  function renderSponsor(x) {
+  function logoTile(x, small) {
     var url = safeUrl(x.url);
-    var logo = x.logo
-      ? '<img class="sponsor__logo" src="' + esc(x.logo) + '" alt="" loading="lazy">'
-      : "";
+    var img = x.logo
+      ? '<img src="' + esc(x.logo) + '" alt="' + esc(x.name) + '" loading="lazy">'
+      : '<span class="logo-tile__text">' + esc(x.name) + "</span>";
+    var cls = "logo-tile" + (small ? " logo-tile--small" : "");
+    return url
+      ? '<a class="' + cls + '" href="' + esc(url) + '" target="_blank" rel="noopener">' + img + "</a>"
+      : '<span class="' + cls + '">' + img + "</span>";
+  }
+
+  function sponsorCard(x, withEvents) {
+    var url = safeUrl(x.url);
     var name = url
       ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(x.name) + "</a>"
       : esc(x.name);
     return (
-      '<li class="person sponsor">' +
-        '<h3 class="person__name">' + logo + name + "</h3>" +
-        '<p class="person__role">' + esc(x.contribution || "") + "</p>" +
-        '<div class="person__events">' + eventChips(x.events) + "</div>" +
+      '<li class="sponsor-card">' +
+        logoTile(x) +
+        '<h3 class="sponsor-card__name">' + name + "</h3>" +
+        (x.contribution ? '<p class="sponsor-card__gift">' + esc(x.contribution) + "</p>" : "") +
+        (withEvents ? '<div class="person__events">' + eventChips(x.events) + "</div>" : "") +
       "</li>"
     );
   }
 
   document.querySelectorAll("[data-credits-sponsors]").forEach(function (el) {
     if (!allSponsors.length) return;
-    el.innerHTML = '<ul class="people">' + allSponsors.map(renderSponsor).join("") + "</ul>";
+    el.innerHTML = '<ul class="sponsor-grid">' + allSponsors.map(function (x) { return sponsorCard(x, true); }).join("") + "</ul>";
+  });
+
+  // Hackathons page: who is sponsoring the next hackathon and what participants get
+  document.querySelectorAll("[data-next-sponsors]").forEach(function (el) {
+    var sponsors = people(next, "sponsors");
+    var section = el.closest("[data-reveal]");
+    if (!sponsors.length) return;
+    el.innerHTML = '<ul class="sponsor-grid">' + sponsors.map(function (x) { return sponsorCard(x, false); }).join("") + "</ul>";
+    if (section) section.hidden = false;
   });
 
   // Hackathons page: the next hackathon's judges
@@ -392,9 +410,7 @@
     var section = el.closest("[data-reveal]");
     if (!allSponsors.length) return;
     el.innerHTML = '<ul class="supporters">' + allSponsors.map(function (x) {
-      var url = safeUrl(x.url);
-      var inner = (x.logo ? '<img src="' + esc(x.logo) + '" alt="" loading="lazy">' : "") + "<span>" + esc(x.name) + "</span>";
-      return "<li>" + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + "</a>" : inner) + "</li>";
+      return "<li>" + logoTile(x, true) + "</li>";
     }).join("") + "</ul>";
     if (section) section.hidden = false;
   });

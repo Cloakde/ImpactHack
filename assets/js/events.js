@@ -51,7 +51,7 @@ window.RTW_EVENTS = [
     url: "https://global-ai-builders-challenge.devpost.com/",
     rubricUrl: "https://global-ai-builders-challenge.devpost.com/resources",
     rubricUnit: "points",
-    prizes: 32,
+    prizes: 34,
     // Rubric sections and points as published on the Devpost page (out of 100)
     judging: [
       { name: "Problem Value & Practicality", weight: 20, description: "Supported user need, project fit, an advantage over the current approach, and realistic use by the intended users." },
@@ -70,7 +70,39 @@ window.RTW_EVENTS = [
       { name: "Muhammad Abdullah Nazeer", role: "Software Engineer | AI & Machine Learning Instructor at iCodeGuru | LLM Integration & Web Application Development" },
       { name: "Spencer Morgan", role: "Co-Founder, Meltingpot | Game Developer & Entrepreneur" }
     ],
-    sponsors: []
+    // Sponsors and what they gave, as confirmed on the Devpost page
+    sponsors: [
+      {
+        name: "Adaption Labs",
+        url: "https://adaptionlabs.ai/",
+        logo: "assets/img/sponsors/adaption-labs.png",
+        contribution: "$500 in Adaption credits and three months of Adaption Plus for eligible participants, plus $1,000 more in credits for each member of the top three teams."
+      },
+      {
+        name: "Momen",
+        url: "https://momen.app/",
+        logo: "assets/img/sponsors/momen.png",
+        contribution: "$100 in Momen credits for every eligible participant, and $2,000 in credits for each member of the Best Use of Momen team."
+      },
+      {
+        name: "Prune",
+        url: "https://withprune.com/",
+        logo: "assets/img/sponsors/prune.png",
+        contribution: "A Prune Pro account for every team during the event, and 12, 6 and 3 months of Prune Pro for the top three Best Use of Prune projects."
+      },
+      {
+        name: "Dealkata",
+        url: "https://dealkata.mattiac926.workers.dev/",
+        logo: "assets/img/sponsors/dealkata.png",
+        contribution: "Six, three and one month of Dealkata Pro for each member of the first-, second- and third-place teams."
+      },
+      {
+        name: "Art of Problem Solving",
+        url: "https://artofproblemsolving.com/",
+        logo: "assets/img/sponsors/art-of-problem-solving.png",
+        contribution: "Four $25 AoPS product coupons, awarded as prizes."
+      }
+    ]
   },
   {
     name: "ImpactHack 2026",
@@ -96,9 +128,9 @@ window.RTW_EVENTS = [
     ],
     judges: [
       { name: "Ahmad Abuizzah" },
-      { name: "Rayyan Hashmi" }
-      // TODO: "Meta Bender" and "Coz Broz" also judged ImpactHack 2026 per Devpost.
-      // Add them here once you've confirmed the names they want credited publicly.
+      { name: "Rayyan Hashmi" },
+      { name: "Spencer Morgan" },
+      { name: "Adam Ali" }
     ],
     sponsors: [],
     winners: []
