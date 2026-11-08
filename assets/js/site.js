@@ -192,6 +192,27 @@
   });
 
   // Archive page: past hackathons grouped by year, newest first
+  // Judges and sponsors listed on an event, ignoring entries without a name
+  function people(e, key) {
+    return e && Array.isArray(e[key]) ? e[key].filter(function (x) { return x && x.name; }) : [];
+  }
+
+  function nameList(list) {
+    var names = list.map(function (x) { return esc(x.name); });
+    if (names.length < 3) return names.join(" and ");
+    return names.slice(0, -1).join(", ") + " and " + names[names.length - 1];
+  }
+
+  function creditLine(e) {
+    var judges = people(e, "judges");
+    var sponsors = people(e, "sponsors");
+    if (!judges.length && !sponsors.length) return "";
+    var parts = [];
+    if (judges.length) parts.push("Judged by " + nameList(judges));
+    if (sponsors.length) parts.push("Supported by " + nameList(sponsors));
+    return '<p class="release__credits">' + parts.join(". ") + '. <a href="credits.html">Credits</a></p>';
+  }
+
   function renderRelease(e) {
     var url = safeUrl(e.url);
     var winners = Array.isArray(e.winners) ? e.winners.filter(function (w) { return w && w.project; }) : [];
@@ -217,9 +238,10 @@
           "<p>" + esc(e.description) + "</p>" +
           (validRubric(e).length
             ? '<p class="release__rubric">Judged on ' + validRubric(e).map(function (c) {
-                return esc(c.name) + " " + Number(c.weight) + "%";
+                return esc(c.name) + " " + Number(c.weight) + (e.rubricUnit === "points" ? " pts" : "%");
               }).join(" · ") + "</p>"
             : "") +
+          creditLine(e) +
           winnersHtml +
         "</div>" +
         '<div class="release__stats">' + esc(statsLine(e)) + link + "</div>" +
@@ -249,6 +271,148 @@
         "</section>"
       );
     }).join("");
+  });
+
+  /* ---------- Credits: everyone who judged or sponsored ---------- */
+
+  // One entry per person or organization across all hackathons, keeping the
+  // details from the most recent hackathon they appear in.
+  function collect(key) {
+    var byName = {};
+    var order = [];
+    events.forEach(function (e) {
+      people(e, key).forEach(function (x) {
+        var id = String(x.name).trim().toLowerCase();
+        if (!byName[id]) {
+          byName[id] = { name: x.name, events: [] };
+          order.push(id);
+        }
+        var entry = byName[id];
+        ["role", "url", "logo", "contribution"].forEach(function (k) {
+          if (x[k]) entry[k] = x[k];
+        });
+        entry.events.push(e);
+      });
+    });
+    return order.map(function (id) { return byName[id]; }).sort(function (a, b) {
+      return b.events.length - a.events.length || a.name.localeCompare(b.name);
+    });
+  }
+
+  var allJudges = collect("judges");
+  var allSponsors = collect("sponsors");
+
+  function eventChips(list) {
+    return list.slice().reverse().map(function (e) {
+      var href = e.status === "upcoming" ? safeUrl(e.url) || "hackathons.html" : "archive.html";
+      var ext = /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : "";
+      return '<a class="chip" href="' + esc(href) + '"' + ext + ">" + esc(e.name) + "</a>";
+    }).join("");
+  }
+
+  function personName(x) {
+    var url = safeUrl(x.url);
+    return url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(x.name) + '<span aria-hidden="true"> \u2197</span></a>'
+      : esc(x.name);
+  }
+
+  document.querySelectorAll("[data-total-judges]").forEach(function (el) {
+    el.textContent = num(allJudges.length);
+  });
+
+  // Credits page head: judges as `git shortlog -sn` output
+  document.querySelectorAll("[data-shortlog]").forEach(function (el) {
+    if (!allJudges.length) return;
+    var LIMIT = 8;
+    var rows = allJudges.slice(0, LIMIT).map(function (j) {
+      return '<div class="shortlog__row"><span class="shortlog__n">' + j.events.length + "</span>" +
+        '<span class="shortlog__name">' + esc(j.name) + "</span></div>";
+    });
+    if (allJudges.length > LIMIT) {
+      rows.push('<div class="shortlog__row shortlog__more"><span class="shortlog__n"></span><span>+' +
+        (allJudges.length - LIMIT) + " more below</span></div>");
+    }
+    el.innerHTML = '<div class="ls__cmd"><span class="sigil">$</span> git shortlog -sn --judges</div>' + rows.join("");
+  });
+
+  document.querySelectorAll("[data-credits-judges]").forEach(function (el) {
+    if (!allJudges.length) return;
+    el.innerHTML = '<ul class="people">' + allJudges.map(function (j) {
+      return (
+        '<li class="person">' +
+          '<h3 class="person__name">' + personName(j) + "</h3>" +
+          '<p class="person__role">' + esc(j.role || "") + "</p>" +
+          '<div class="person__events">' + eventChips(j.events) + "</div>" +
+        "</li>"
+      );
+    }).join("") + "</ul>";
+  });
+
+  function logoTile(x, small) {
+    var url = safeUrl(x.url);
+    var img = x.logo
+      ? '<img src="' + esc(x.logo) + '" alt="' + esc(x.name) + '" loading="lazy">'
+      : '<span class="logo-tile__text">' + esc(x.name) + "</span>";
+    var cls = "logo-tile" + (small ? " logo-tile--small" : "");
+    return url
+      ? '<a class="' + cls + '" href="' + esc(url) + '" target="_blank" rel="noopener">' + img + "</a>"
+      : '<span class="' + cls + '">' + img + "</span>";
+  }
+
+  function sponsorCard(x, withEvents) {
+    var url = safeUrl(x.url);
+    var name = url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(x.name) + "</a>"
+      : esc(x.name);
+    return (
+      '<li class="sponsor-card">' +
+        logoTile(x) +
+        '<h3 class="sponsor-card__name">' + name + "</h3>" +
+        (x.contribution ? '<p class="sponsor-card__gift">' + esc(x.contribution) + "</p>" : "") +
+        (withEvents ? '<div class="person__events">' + eventChips(x.events) + "</div>" : "") +
+      "</li>"
+    );
+  }
+
+  document.querySelectorAll("[data-credits-sponsors]").forEach(function (el) {
+    if (!allSponsors.length) return;
+    el.innerHTML = '<ul class="sponsor-grid">' + allSponsors.map(function (x) { return sponsorCard(x, true); }).join("") + "</ul>";
+  });
+
+  // Hackathons page: who is sponsoring the next hackathon and what participants get
+  document.querySelectorAll("[data-next-sponsors]").forEach(function (el) {
+    var sponsors = people(next, "sponsors");
+    var section = el.closest("[data-reveal]");
+    if (!sponsors.length) return;
+    el.innerHTML = '<ul class="sponsor-grid">' + sponsors.map(function (x) { return sponsorCard(x, false); }).join("") + "</ul>";
+    if (section) section.hidden = false;
+  });
+
+  // Hackathons page: the next hackathon's judges
+  document.querySelectorAll("[data-next-judges]").forEach(function (el) {
+    var judges = people(next, "judges");
+    var section = el.closest("[data-reveal]");
+    if (!judges.length) return;
+    el.innerHTML = '<ul class="people people--compact">' + judges.map(function (j) {
+      return (
+        '<li class="person">' +
+          '<h3 class="person__name">' + personName(j) + "</h3>" +
+          '<p class="person__role">' + esc(j.role || "") + "</p>" +
+        "</li>"
+      );
+    }).join("") + "</ul>";
+    if (section) section.hidden = false;
+  });
+
+  // Sponsor page: past supporters, once there are any
+  document.querySelectorAll("[data-supporters]").forEach(function (el) {
+    var section = el.closest("[data-reveal]");
+    if (!allSponsors.length) return;
+    el.innerHTML = '<ul class="supporters">' + allSponsors.map(function (x) {
+      return "<li>" + logoTile(x, true) + "</li>";
+    }).join("") + "</ul>";
+    if (section) section.hidden = false;
   });
 
   /* ---------- Headline: noise rewritten into text, left to right ---------- */

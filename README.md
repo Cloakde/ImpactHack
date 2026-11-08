@@ -13,6 +13,7 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 | `archive.html` | Every past hackathon grouped by year, with running totals and optional winners |
 | `sponsor.html` | Reach, ways to help, sponsorship packages, contact |
 | `about.html` | Mission, the name, values, team (hidden until filled in) |
+| `credits.html` | Thank-you page: every judge and sponsor across all hackathons, built from `events.js` |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
 ## Adding or updating a hackathon
@@ -25,6 +26,8 @@ Edit **`assets/js/events.js`**. It's the only file you need to touch. The field 
 - Running totals (hackathons run, participants, prizes) are added up from every past event's `participants` and `prizes`, and appear on the Archive, Hackathons and Sponsor pages.
 
 Each hackathon can have its own judging rubric (`judging`). The next hackathon's rubric is drawn to scale on the Hackathons page as soon as you add it; until then the page says the rubric is published with the theme.
+
+List each hackathon's `judges` and `sponsors` in the same entry. They're thanked on the Credits page (one entry per person, with every hackathon they helped), shown as "Meet the judges" on the Hackathons page for the next event, and named in the archive. Sponsor sections stay hidden until the first sponsor is added. Put sponsor logos in `assets/img/sponsors/`; they're shown on light tiles, so logos made for white backgrounds work as-is. The next hackathon's sponsors and what they give also appear on the Hackathons page.
 
 When a hackathon ends, change its `status` to `"past"`, fill in `participants`, `prizes` and optionally `projects` and `winners`, and add the next season's event as `"upcoming"`.
 
@@ -62,4 +65,4 @@ Search the code for `TODO` to find them all.
 - The home page also loads `globe.js`, which draws the hero globe from the land map in `land.js` (Natural Earth data).
 - `assets/img/` holds the logo as the tab icon (`favicon-32/64.png`), phone home-screen icons (`icon-180/512.png`) and the social preview card (`og.png`, 1200×630) used when links are shared.
 - `sitemap.xml`, `robots.txt` and `site.webmanifest` are for search engines and phones. Add any new page to `sitemap.xml`.
-- The header and footer (including the phone menu) are repeated in each page. If you change one, update it in all six HTML files.
+- The header and footer (including the phone menu) are repeated in each page. If you change one, update it in all seven HTML files.

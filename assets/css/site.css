@@ -1843,3 +1843,332 @@ a {
 .rubric-link {
   margin: 36px 0 0;
 }
+
+/* ==========================================================================
+   Credits
+   ========================================================================== */
+
+.credits-head {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: 16px clamp(32px, 6vw, 96px);
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.credits-head .h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4.4vw, 3.8rem);
+}
+
+.credits-head .body-copy {
+  margin: 0;
+}
+
+.credits-head .body-copy a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 860px) {
+  .credits-head {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shortlog in the page head */
+.shortlog__row {
+  display: grid;
+  grid-template-columns: 5ch minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 5px;
+  white-space: nowrap;
+}
+
+.shortlog__n {
+  text-align: right;
+  color: var(--add);
+  font-variant-numeric: tabular-nums;
+}
+
+.shortlog__name {
+  color: var(--paper);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortlog__more {
+  color: var(--faint);
+}
+
+/* People and sponsors */
+.people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 5fr) minmax(0, 3fr);
+  gap: 8px clamp(24px, 4vw, 56px);
+  align-items: baseline;
+  padding-block: 26px;
+  border-top: 1px solid var(--rule);
+}
+
+.person:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.person__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.person__name a {
+  text-decoration: none;
+}
+
+.person__name a span {
+  color: var(--add);
+  font-size: 0.6em;
+  vertical-align: 0.3em;
+}
+
+.person:hover .person__name {
+  color: var(--add);
+}
+
+.person__role {
+  color: var(--dim);
+  margin: 0;
+  max-width: 48ch;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.person__events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.chip {
+  font-family: var(--display);
+  font-stretch: 87.5%;
+  font-size: 0.72rem;
+  color: var(--dim);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  padding: 3px 9px;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  color: var(--add);
+  border-color: var(--add);
+}
+
+
+/* Compact two-column variant for the Hackathons page */
+.people--compact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 64px);
+}
+
+.people--compact .person {
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 6px;
+  padding-block: 22px;
+  border-bottom: 0;
+}
+
+.people--compact .person__name {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+}
+
+@media (max-width: 860px) {
+  .person {
+    grid-template-columns: 1fr;
+  }
+
+  .person__events {
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .people--compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empty sponsor state */
+.empty-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px dashed var(--faint);
+}
+
+.empty-credit__line {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* Sponsor logos sit on light tiles: most logos are drawn for white backgrounds */
+.logo-tile {
+  --pad-y: 18px;
+  --pad-x: 26px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  max-width: 100%;
+  padding: var(--pad-y) var(--pad-x);
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
+}
+
+a.logo-tile:hover {
+  box-shadow: 0 0 0 3px var(--add);
+}
+
+/* The logo is fitted inside the tile, so its own size never stretches the tile */
+.logo-tile img {
+  position: absolute;
+  top: var(--pad-y);
+  left: var(--pad-x);
+  width: calc(100% - 2 * var(--pad-x));
+  height: calc(100% - 2 * var(--pad-y));
+  object-fit: contain;
+}
+
+.logo-tile__text {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.logo-tile--small {
+  --pad-y: 12px;
+  --pad-x: 18px;
+  width: 180px;
+}
+
+.sponsor-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 44px clamp(20px, 3vw, 36px);
+}
+
+.sponsor-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.sponsor-card .logo-tile {
+  margin-bottom: 8px;
+}
+
+.sponsor-card__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.sponsor-card__name a {
+  text-decoration: none;
+}
+
+.sponsor-card__name a:hover {
+  color: var(--add);
+}
+
+.sponsor-card__gift {
+  color: var(--dim);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sponsor-card .person__events {
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+/* Sponsor page strip */
+.supporters {
+  list-style: none;
+  margin: 8px 0 28px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.supporters-note a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-tile {
+    transition: none;
+  }
+}
+
+/* Archive credit line */
+.release__credits {
+  font-size: 0.92rem;
+  margin-top: 10px !important;
+}
+
+.release__credits a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person__name,
+  .chip {
+    transition: none;
+  }
+}
