@@ -23,6 +23,15 @@
  *                 Weights are percentages and should add up to 100. The next
  *                 hackathon's rubric appears on the Hackathons page; past ones
  *                 are summarized in the archive. Leave it out until it's decided.
+ *   judges        Optional list of judges, e.g.
+ *                 [{ name: "Full Name", role: "Title, Organization", url: "https://..." }]
+ *                 They are thanked on the Credits page, listed on the Hackathons
+ *                 page for the next hackathon, and named in the archive. url is optional.
+ *   sponsors      Optional list of sponsors and partners, e.g.
+ *                 [{ name: "Company", url: "https://...", logo: "assets/img/sponsors/company.png",
+ *                    contribution: "API credits for every team" }]
+ *                 Only url, logo and contribution are optional. Sponsor sections stay
+ *                 hidden until at least one hackathon lists a sponsor.
  *   winners       Optional list of winners for past events, e.g.
  *                 [{ place: "1st", project: "Project name", url: "https://..." }]
  *
@@ -49,7 +58,19 @@ window.RTW_EVENTS = [
       { name: "AI Integration & Development", weight: 30, description: "Justified AI choice, effective implementation, AI assessment with results and limits, and checked AI-assisted development." },
       { name: "Functionality & Reliability", weight: 30, description: "Complete main task, correct results across cases, and safe failure handling." },
       { name: "Design Quality & User Experience", weight: 20, description: "Clear emphasis, consistent design, reduced user effort, and understandable information." }
-    ]
+    ],
+    // Judges and titles as listed on the Devpost page
+    judges: [
+      { name: "Ahmad Abuizzah", role: "Founder & Hackathon Organizer, Refactor The World" },
+      { name: "Ismail Bashandy", role: "Mechatronics Lecturing Assistant" },
+      { name: "Shayan Hoque", role: "AI App Developer" },
+      { name: "Adam Ali", role: "Co-founder, MeltingPot" },
+      { name: "Rayyan Hashmi", role: "Co-founder, MeltingPot" },
+      { name: "Takoua El Bejaoui", role: "Mechanical & Aerospace Engineer | Research & Design Experience at Stanford University | Computer Science & Engineering Educator" },
+      { name: "Muhammad Abdullah Nazeer", role: "Software Engineer | AI & Machine Learning Instructor at iCodeGuru | LLM Integration & Web Application Development" },
+      { name: "Spencer Morgan", role: "Co-Founder, Meltingpot | Game Developer & Entrepreneur" }
+    ],
+    sponsors: []
   },
   {
     name: "ImpactHack 2026",
@@ -73,6 +94,13 @@ window.RTW_EVENTS = [
       { name: "Use of AI & Technology", weight: 15, description: "How effectively does the project use AI or other technology to expand its capabilities?" },
       { name: "Presentation & Demo", weight: 15, description: "How clearly and effectively does the team communicate its problem, solution, features, and impact?" }
     ],
+    judges: [
+      { name: "Ahmad Abuizzah" },
+      { name: "Rayyan Hashmi" }
+      // TODO: "Meta Bender" and "Coz Broz" also judged ImpactHack 2026 per Devpost.
+      // Add them here once you've confirmed the names they want credited publicly.
+    ],
+    sponsors: [],
     winners: []
   }
 ];

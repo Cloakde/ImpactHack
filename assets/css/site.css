@@ -1843,3 +1843,261 @@ a {
 .rubric-link {
   margin: 36px 0 0;
 }
+
+/* ==========================================================================
+   Credits
+   ========================================================================== */
+
+.credits-head {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: 16px clamp(32px, 6vw, 96px);
+  align-items: end;
+  margin-bottom: 40px;
+}
+
+.credits-head .h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4.4vw, 3.8rem);
+}
+
+.credits-head .body-copy {
+  margin: 0;
+}
+
+.credits-head .body-copy a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 860px) {
+  .credits-head {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shortlog in the page head */
+.shortlog__row {
+  display: grid;
+  grid-template-columns: 5ch minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 5px;
+  white-space: nowrap;
+}
+
+.shortlog__n {
+  text-align: right;
+  color: var(--add);
+  font-variant-numeric: tabular-nums;
+}
+
+.shortlog__name {
+  color: var(--paper);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shortlog__more {
+  color: var(--faint);
+}
+
+/* People and sponsors */
+.people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 5fr) minmax(0, 3fr);
+  gap: 8px clamp(24px, 4vw, 56px);
+  align-items: baseline;
+  padding-block: 26px;
+  border-top: 1px solid var(--rule);
+}
+
+.person:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.person__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+.person__name a {
+  text-decoration: none;
+}
+
+.person__name a span {
+  color: var(--add);
+  font-size: 0.6em;
+  vertical-align: 0.3em;
+}
+
+.person:hover .person__name {
+  color: var(--add);
+}
+
+.person__role {
+  color: var(--dim);
+  margin: 0;
+  max-width: 48ch;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.person__events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.chip {
+  font-family: var(--display);
+  font-stretch: 87.5%;
+  font-size: 0.72rem;
+  color: var(--dim);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  padding: 3px 9px;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  color: var(--add);
+  border-color: var(--add);
+}
+
+.sponsor__logo {
+  display: inline-block;
+  height: 0.9em;
+  width: auto;
+  max-width: 4em;
+  margin-right: 0.35em;
+  vertical-align: -0.08em;
+  object-fit: contain;
+}
+
+/* Compact two-column variant for the Hackathons page */
+.people--compact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 64px);
+}
+
+.people--compact .person {
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 6px;
+  padding-block: 22px;
+  border-bottom: 0;
+}
+
+.people--compact .person__name {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+}
+
+@media (max-width: 860px) {
+  .person {
+    grid-template-columns: 1fr;
+  }
+
+  .person__events {
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .people--compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empty sponsor state */
+.empty-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px dashed var(--faint);
+}
+
+.empty-credit__line {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* Sponsor page strip */
+.supporters {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.supporters a {
+  text-decoration: none;
+}
+
+.supporters a:hover {
+  color: var(--add);
+}
+
+.supporters img {
+  height: 0.9em;
+  width: auto;
+  max-width: 4em;
+  margin-right: 0.3em;
+  vertical-align: -0.08em;
+}
+
+.supporters-note a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 4px;
+}
+
+/* Archive credit line */
+.release__credits {
+  font-size: 0.92rem;
+  margin-top: 10px !important;
+}
+
+.release__credits a {
+  color: var(--paper);
+  text-decoration-color: var(--add);
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person__name,
+  .chip {
+    transition: none;
+  }
+}
