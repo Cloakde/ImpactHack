@@ -130,7 +130,9 @@ window.RTW_EVENTS = [
       { name: "Ahmad Abuizzah" },
       { name: "Rayyan Hashmi" },
       { name: "Spencer Morgan" },
-      { name: "Adam Ali" }
+      { name: "Adam Ali" },
+      { name: "Ismail Bashandy" },
+      { name: "Shayan Hoque" }
     ],
     sponsors: [],
     winners: []
